@@ -1,4 +1,9 @@
 ---
 alwaysApply: true
 ---
-ALways build the project, front-end and back-end after applying any changes, to verify that the changes have been successful.
+
+## Build the app to verify the work
+Always build the project, front-end and back-end after applying any changes, to verify that the changes have been successful.
+
+## Verify style changes in the browser
+If there have been any front-end changes verify that there are no mistakes by running the app in the browser. If there any javascript or less errors, fix them before verifying again. 

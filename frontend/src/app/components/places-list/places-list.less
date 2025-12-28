@@ -1,4 +1,5 @@
 // Places List component styles
+@import '../../../styles/_variables';
 
 .places-list-container {
   max-width: 1200px;
@@ -12,13 +13,13 @@
 
   h1 {
     font-size: 2.5rem;
-    color: #333;
+    color: @color-text-primary;
     margin-bottom: 0.5rem;
   }
 
   .subtitle {
     font-size: 1.2rem;
-    color: #666;
+    color: @color-text-muted;
   }
 }
 
@@ -37,14 +38,14 @@
     .search-input {
       width: 100%;
       padding: 0.75rem 1rem;
-      border: 2px solid #ddd;
+      border: 2px solid @color-border-light;
       border-radius: 4px;
       font-size: 1rem;
       transition: border-color 0.3s ease;
 
       &:focus {
         outline: none;
-        border-color: #667eea;
+        border-color: @color-primary;
       }
     }
   }
@@ -56,22 +57,22 @@
 
     label {
       font-size: 0.9rem;
-      color: #666;
+      color: @color-text-muted;
       font-weight: 600;
     }
 
     .category-select {
       padding: 0.75rem 1rem;
-      border: 2px solid #ddd;
+      border: 2px solid @color-border-light;
       border-radius: 4px;
       font-size: 1rem;
-      background: white;
+      background: @color-bg-surface;
       cursor: pointer;
       transition: border-color 0.3s ease;
 
       &:focus {
         outline: none;
-        border-color: #667eea;
+        border-color: @color-primary;
       }
     }
   }
@@ -82,7 +83,7 @@
 .error-message {
   text-align: center;
   padding: 3rem;
-  color: #666;
+  color: @color-text-muted;
 
   p {
     font-size: 1.2rem;
@@ -91,7 +92,7 @@
 }
 
 .error-message {
-  color: #d32f2f;
+  color: @color-error;
 }
 
 // Places Grid
@@ -102,7 +103,7 @@
   margin-bottom: 2rem;
 
   .place-card {
-    background: white;
+    background: @color-bg-surface;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -136,7 +137,7 @@
         position: absolute;
         top: 1rem;
         right: 1rem;
-        background: rgba(102, 126, 234, 0.9);
+        background: fade(@color-primary, 90%);
         color: white;
         padding: 0.5rem 1rem;
         border-radius: 20px;
@@ -156,26 +157,26 @@
       h2 {
         font-size: 1.4rem;
         margin-bottom: 0.5rem;
-        color: #333;
+        color: @color-text-primary;
         line-height: 1.3;
       }
 
       .place-address {
         font-size: 0.9rem;
-        color: #667eea;
+        color: @color-primary;
         margin-bottom: 1rem;
         font-weight: 500;
       }
 
       .place-description {
         font-size: 0.95rem;
-        color: #666;
+        color: @color-text-muted;
         line-height: 1.6;
         margin-bottom: 1rem;
       }
 
       .read-more {
-        color: #667eea;
+        color: @color-primary;
         font-weight: 600;
         font-size: 0.95rem;
       }
@@ -186,7 +187,7 @@
 // Results Count
 .results-count {
   text-align: center;
-  color: #666;
+  color: @color-text-muted;
   font-size: 0.95rem;
   padding: 1rem;
 }
@@ -195,7 +196,7 @@
 .no-results {
   text-align: center;
   padding: 4rem 2rem;
-  color: #666;
+  color: @color-text-muted;
 
   p {
     font-size: 1.2rem;
@@ -216,23 +217,23 @@
   font-size: 1rem;
 
   &.btn-primary {
-    background: #667eea;
+    background: @color-primary;
     color: white;
-    border-color: #667eea;
+    border-color: @color-primary;
 
     &:hover {
-      background: #5568d3;
-      border-color: #5568d3;
+      background: @color-primary-dark;
+      border-color: @color-primary-dark;
     }
   }
 
   &.btn-outline {
     background: transparent;
-    color: #667eea;
-    border-color: #667eea;
+    color: @color-primary;
+    border-color: @color-primary;
 
     &:hover {
-      background: #667eea;
+      background: @color-primary;
       color: white;
     }
   }

@@ -1,6 +1,7 @@
-import { Component, inject, OnInit, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { Subject, Subscription, debounceTime, distinctUntilChanged } from 'rxjs';
 import { PlacesService } from '../../services/places';
 import { Place } from '../../models/place.model';
 import { ResponsiveImageComponent } from '../responsive-image/responsive-image';
@@ -12,7 +13,7 @@ import { ResponsiveImageComponent } from '../responsive-image/responsive-image';
   styleUrl: './places-list.less',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PlacesList implements OnInit {
+export class PlacesList implements OnInit, OnDestroy {
   // Inject the PlacesService
   private placesService = inject(PlacesService);
   
@@ -31,8 +32,51 @@ export class PlacesList implements OnInit {
   // Signal for selected category filter
   selectedCategory = signal<string>('all');
 
+  // Subject to handle search input with debouncing
+  private searchSubject = new Subject<string>();
+  
+  // Subscription to manage the search debounce
+  private searchSubscription?: Subscription;
+
+  // Minimum characters required before searching (set to 3)
+  private readonly MIN_SEARCH_LENGTH = 3;
+  
+  // Debounce time in milliseconds (set to 500ms = half a second)
+  private readonly DEBOUNCE_TIME = 500;
+
   ngOnInit(): void {
     this.loadPlaces();
+    this.setupSearchDebounce();
+  }
+
+  ngOnDestroy(): void {
+    // Clean up subscription to prevent memory leaks
+    this.searchSubscription?.unsubscribe();
+  }
+
+  /**
+   * Set up debounced search functionality
+   * Only triggers search after user stops typing for 500ms
+   * and only if search term has at least 3 characters (or is empty to clear)
+   */
+  private setupSearchDebounce(): void {
+    this.searchSubscription = this.searchSubject
+      .pipe(
+        // Wait 500ms after user stops typing before processing
+        debounceTime(this.DEBOUNCE_TIME),
+        // Only process if value has changed
+        distinctUntilChanged()
+      )
+      .subscribe(term => {
+        // Only update search term if it has at least 3 characters or is empty
+        // This prevents searching with less than 3 characters
+        if (term.length === 0 || term.length >= this.MIN_SEARCH_LENGTH) {
+          this.searchTerm.set(term);
+        } else {
+          // If less than 3 characters, clear the search to show all results
+          this.searchTerm.set('');
+        }
+      });
   }
 
   /**
@@ -89,11 +133,23 @@ export class PlacesList implements OnInit {
   }
 
   /**
-   * Update search term
+   * Handle search input changes
+   * Pushes the value to the search subject for debounced processing
    */
   onSearchChange(event: Event): void {
     const target = event.target as HTMLInputElement;
-    this.searchTerm.set(target.value);
+    const value = target.value;
+    
+    // If the search is cleared (empty), update immediately without debounce
+    if (value.length === 0) {
+      this.searchTerm.set('');
+      return;
+    }
+    
+    // For non-empty values, push to subject for debounced processing
+    // The debounce will wait 500ms, then only trigger search if value >= 3 characters
+    // If value < 3 characters, it will clear the search to show all results
+    this.searchSubject.next(value);
   }
 
   /**

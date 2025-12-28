@@ -9,6 +9,7 @@ A web application showcasing interesting and quirky places in Surfers Paradise, 
 - **Place Detail Pages**: Individual pages for each place with photos, descriptions, and embedded Google Maps
 - **Responsive Design**: Mobile-friendly layout using CSS Grid and Flexbox
 - **Modern Angular**: Built with Angular 21 using standalone components and signals
+- **Swappable colour palettes**: uncomment a theme in _themes.less to use it
 
 ## Tech Stack
 
@@ -161,26 +162,6 @@ For production deployment, you may want to:
 1. Create environment files for different environments (dev, test, prod)
 2. Store the Google Maps API key in environment variables
 3. Configure API base URLs per environment
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## Accessibility
-
-The application follows WCAG AA standards and includes:
-- Semantic HTML
-- ARIA attributes where needed
-- Keyboard navigation support
-- Focus management
-- Color contrast compliance
-
-## License
-
-This project is private and proprietary.
 
 ## Notes
 

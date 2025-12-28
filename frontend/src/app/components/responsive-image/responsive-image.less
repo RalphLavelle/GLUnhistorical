@@ -1,5 +1,11 @@
 // Responsive Image Component Styles
 // Uses breakpoints from base styles.less
+@import '../../../styles/_variables';
+
+:host {
+  display: block;
+  width: 100%;
+}
 
 img {
   // Ensure image is responsive and maintains aspect ratio
@@ -12,6 +18,6 @@ img {
   image-rendering: crisp-edges;
   
   // Prevent layout shift during image load
-  background-color: #f0f0f0;
+  background-color: @color-bg-placeholder;
 }
 
