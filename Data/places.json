@@ -1,0 +1,267 @@
+{
+  "places": [
+    {
+      "id": "q1-tower-skypoint",
+      "name": "Q1 Tower & SkyPoint Observation Deck",
+      "description": "Standing at an impressive 322.5 metres, Q1 (Queensland Number One) held the title of Australia's tallest building and the tallest residential tower in the world when it was completed in 2005. This architectural marvel dominates the Surfers Paradise skyline with its distinctive curved spire inspired by the Sydney Opera House sails and the Olympic torch. The tower houses SkyPoint, Australia's only beachside observation deck, located 230 metres above sea level on levels 77 and 78. For thrill-seekers, the SkyPoint Climb offers an external building climb reaching 270 metres, where participants can walk around the outside of the building secured by harnesses. The building cost $255 million to construct and contains 527 apartments. At night, the spire is illuminated, creating a beacon visible for kilometres. The observation deck offers 360-degree panoramic views stretching from Byron Bay in the south to Brisbane in the north, making it the perfect starting point for any walking tour of Surfers Paradise.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Q1_Gold_Coast.jpg/800px-Q1_Gold_Coast.jpg",
+      "latitude": -28.00611,
+      "longitude": 153.42944,
+      "category": "landmark",
+      "address": "9 Hamilton Avenue, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "surfers-paradise-sign",
+      "name": "Surfers Paradise Beach Entrance Sign",
+      "description": "No visit to Surfers Paradise is complete without a photo at the iconic Surfers Paradise sign, which has welcomed visitors to this famous beach since the 1960s. Located at the eastern end of Cavill Avenue where it meets the Esplanade, this instantly recognisable landmark has become synonymous with the Gold Coast tourism experience. The sign has undergone several iterations over the decades, with the current version featuring bold lettering and the distinctive Gold Coast aqua colours. It serves as the primary gateway between the bustling commercial precinct of Cavill Avenue and the golden sands of Surfers Paradise Beach. The area around the sign is a popular gathering spot for tourists and locals alike, especially around sunset when the lighting creates perfect photo opportunities. The sign represents the transformation of the area from a quiet coastal village to Australia's premier holiday destination. During major events and festivals, the sign area becomes a focal point for celebrations and gatherings.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Surfers_Paradise_Beach_entrance.jpg/800px-Surfers_Paradise_Beach_entrance.jpg",
+      "latitude": -28.00208,
+      "longitude": 153.43111,
+      "category": "landmark",
+      "address": "Cavill Avenue at The Esplanade, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "cavill-avenue",
+      "name": "Cavill Avenue Mall",
+      "description": "Cavill Avenue is the beating heart of Surfers Paradise, named after James Cavill who established the first hotel in the area in 1925, effectively founding the suburb. This pedestrianised mall stretches from the Gold Coast Highway to the beachfront, serving as the main commercial artery of Surfers Paradise. The street underwent a major transformation in the 1970s when it was converted into a pedestrian mall, featuring palm trees, outdoor dining areas, and retail shops. Today, Cavill Avenue buzzes with activity day and night, featuring a mix of international brands, souvenir shops, cafes, and street performers. The mall has been the scene of numerous significant events in Gold Coast history, from New Year's Eve celebrations to the Commonwealth Games festivities. Walking down Cavill Avenue provides a microcosm of the Gold Coast experience, with the smell of salt air mixing with coffee from countless cafes. The avenue connects directly to major shopping centres including Circle on Cavill and the Paradise Centre, making it the central hub for visitors exploring Surfers Paradise on foot.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Cavill_Mall%2C_Surfers_Paradise%2C_Queensland.jpg/800px-Cavill_Mall%2C_Surfers_Paradise%2C_Queensland.jpg",
+      "latitude": -28.00137,
+      "longitude": 153.42878,
+      "category": "landmark",
+      "address": "Cavill Avenue, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "pink-poodle-sign",
+      "name": "The Pink Poodle Neon Sign",
+      "description": "The Pink Poodle neon sign is a beloved relic of the Gold Coast's glamorous past, originally part of the Pink Poodle Motel built in 1967. The motel was one of many distinctive roadside establishments that gave the Gold Coast its reputation for flashy, American-style accommodation during the tourism boom of the 1960s. When the original motel was demolished in 2004, community outcry led to the preservation and relocation of this iconic neon sign to 18 Fern Street. The sign features a glowing pink poodle in classic mid-century modern style, representing the era when the Gold Coast was establishing its identity as a glamorous holiday destination. In 2005, the Pink Poodle sign was nominated as one of Queensland's Heritage Icons, recognising its cultural significance. The sign has become a pilgrimage site for architecture enthusiasts and nostalgia seekers, representing the quirky character that made the Gold Coast famous. It stands as one of the few remaining examples of the neon motel signage that once lined the Gold Coast Highway.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Pink_Poodle_Neon_Sign.jpg/600px-Pink_Poodle_Neon_Sign.jpg",
+      "latitude": -27.99890,
+      "longitude": 153.42510,
+      "category": "historic",
+      "address": "18 Fern Street, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "meter-maids",
+      "name": "Meter Maids Photo Opportunity",
+      "description": "The Meter Maids are one of the most uniquely Australian tourist attractions, born right here in Surfers Paradise in 1965. These golden bikini-clad women became famous for patrolling the streets and feeding expired parking meters to prevent motorists from receiving fines, promoting goodwill and the carefree Gold Coast lifestyle. The concept was created by local businessman Bernie Elsey as a promotional idea for the Surfers Paradise Progress Association. The Meter Maids quickly became international celebrities, featuring in news stories around the world and becoming synonymous with the Gold Coast's fun-loving image. While the tradition has evolved over the decades, you can still spot Meter Maids along Cavill Avenue and the surrounding streets, now posing for photos with tourists rather than feeding meters. The Meter Maids represent the quirky, lighthearted marketing genius that helped transform Surfers Paradise from a small coastal town into an internationally recognised holiday destination. Keep your camera ready as you explore the area for a chance to capture this uniquely Gold Coast photo opportunity.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Meter_Maid_Surfers_Paradise.jpg/600px-Meter_Maid_Surfers_Paradise.jpg",
+      "latitude": -28.00150,
+      "longitude": 153.42900,
+      "category": "attraction",
+      "address": "Cavill Avenue area, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "kinkabool",
+      "name": "Kinkabool Building",
+      "description": "Kinkabool holds a special place in Gold Coast history as the first high-rise apartment building ever constructed on the coast, built between 1959 and 1960. This heritage-listed building marked the beginning of the vertical transformation that would eventually create the iconic Surfers Paradise skyline we see today. Standing at a modest 16 storeys (57 metres), Kinkabool was revolutionary for its time and sparked the high-rise building boom that continues to this day. The building's name comes from an Aboriginal word meaning 'meeting place of the crescent moon and crabs'. Located on the Esplanade with prime beachfront views, Kinkabool represented a new era of coastal living and tourism development. While dwarfed by modern towers like Q1, this building remains historically significant as the pioneer that proved high-rise living was viable on the Gold Coast. Architecture enthusiasts appreciate its mid-century modern design, which reflects the optimism and ambition of post-war Australia. Kinkabool's heritage listing ensures its preservation as a reminder of where the Gold Coast's famous skyline began.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kinkabool_building.jpg/600px-Kinkabool_building.jpg",
+      "latitude": -27.99950,
+      "longitude": 153.43100,
+      "category": "historic",
+      "address": "3517 Main Beach Parade, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "hota",
+      "name": "HOTA - Home of the Arts",
+      "description": "HOTA (Home of the Arts) is the Gold Coast's premier cultural precinct, located on the banks of the Nerang River just a short walk from Surfers Paradise. This sprawling arts complex hosts live music, theatre, dance, comedy, opera, children's shows, visual arts, and cinema throughout the year. The centrepiece is the HOTA Gallery, opened in 2021, which houses the City Collection and hosts rotating exhibitions of Australian and international art. The outdoor stage and surrounding parklands provide a scenic setting for various events, from markets to major concerts. The precinct features extensive sculpture walks showcasing works by Australian and international artists, set against the stunning backdrop of the Gold Coast skyline. HOTA represents the Gold Coast's evolution from purely a beach destination to a city with a thriving arts and culture scene. The riverside location offers beautiful walking paths and picnic areas, making it perfect for a leisurely afternoon combining art appreciation with natural beauty. The complex also includes the gold-clad Arts Theatre and the historic Arts Centre theatre.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/HOTA_Gold_Coast.jpg/800px-HOTA_Gold_Coast.jpg",
+      "latitude": -28.00570,
+      "longitude": 153.41780,
+      "category": "attraction",
+      "address": "135 Bundall Road, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "chevron-renaissance",
+      "name": "Chevron Renaissance & Chevron Lane",
+      "description": "Chevron Renaissance occupies one of the most historically significant sites in Surfers Paradise, standing where the legendary Chevron Hotel once welcomed guests from 1958 to 2006. The Chevron Hotel was an institution that hosted celebrities, politicians, and countless holiday-makers during the Gold Coast's golden era. The current development combines residential towers with a shopping centre and, most notably, 'Chevron Lane' - a Melbourne-style laneway filled with eclectic street food operators. This laneway brings a new dining culture to Surfers Paradise, with vendors offering everything from Asian fusion to gourmet burgers in an intimate, graffiti-adorned setting. The design pays homage to the area's history while embracing contemporary urban trends. Street art murals decorate the walls, creating a photogenic backdrop for visitors. The transformation from grand hotel to modern mixed-use development tells the story of Surfers Paradise's continuous evolution. Chevron Lane has become a favourite spot for foodies seeking something different from the typical tourist fare, offering a taste of Melbourne's famous laneway culture in a beachside setting.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Chevron_Renaissance%2C_Surfers_Paradise.jpg/600px-Chevron_Renaissance%2C_Surfers_Paradise.jpg",
+      "latitude": -28.00280,
+      "longitude": 153.42650,
+      "category": "attraction",
+      "address": "23 Ferny Avenue, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "beachfront-markets",
+      "name": "Surfers Paradise Beachfront Markets",
+      "description": "The Surfers Paradise Beachfront Markets have been a fixture of Gold Coast life since 1995, transforming the Esplanade into a vibrant open-air marketplace every Wednesday, Friday, and Sunday night. Stretching along the beachfront from Hanlan Street to Elkhorn Avenue, the markets feature over 100 stalls selling handmade crafts, unique fashion, artwork, photography, and distinctly Australian souvenirs. The sound of buskers and street performers fills the air as visitors browse stalls illuminated by fairy lights against the backdrop of the Pacific Ocean. Local artists display their work, and you can often watch craftspeople creating their goods on-site. The markets have launched many successful businesses and continue to support the local creative community. The atmosphere is electric, especially in summer when the markets coincide with spectacular ocean sunsets. Food vendors offer everything from traditional Australian fare to international cuisines. The markets have become so popular that they're now considered one of the must-do experiences for any visitor to the Gold Coast, combining shopping, entertainment, and that quintessential beachside atmosphere.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Surfers_Paradise_Night_Markets.jpg/800px-Surfers_Paradise_Night_Markets.jpg",
+      "latitude": -28.00100,
+      "longitude": 153.43200,
+      "category": "attraction",
+      "address": "The Esplanade, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "surfers-paradise-beach",
+      "name": "Surfers Paradise Beach",
+      "description": "Surfers Paradise Beach is the stretch of golden sand that gave this famous suburb its name and remains the centrepiece of the Gold Coast tourist experience. Extending for approximately three kilometres, this patrolled beach offers consistently excellent surf conditions, crystal-clear waters, and fine golden sand that feels like silk beneath your feet. The beach faces east, providing spectacular sunrise views over the Pacific Ocean, while afternoons see the high-rise towers casting dramatic shadows across the sand. Professional lifeguards patrol the beach year-round, and the flags indicate the safest swimming areas. The consistent wave breaks make it popular with surfers of all skill levels, from beginners taking lessons to experienced riders seeking larger swells. The beach hosts numerous events throughout the year, including surf competitions, beach volleyball tournaments, and the famous Quicksilver Pro surfing event. The contrast between the natural beauty of the beach and the towering urban skyline creates a unique visual that has become iconic in Australian tourism imagery. Early morning walkers, joggers, and yoga practitioners take advantage of the peaceful hours before the crowds arrive.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Surfers_Paradise_Beach_2019.jpg/800px-Surfers_Paradise_Beach_2019.jpg",
+      "latitude": -28.00200,
+      "longitude": 153.43300,
+      "category": "beach",
+      "address": "Surfers Paradise Beach, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "the-esplanade",
+      "name": "The Esplanade & Foreshore Art Trail",
+      "description": "The Esplanade is Surfers Paradise's beloved beachfront promenade, stretching along the coastline and serving as the public living room of the Gold Coast. This wide pedestrian pathway is adorned with public art installations, sculptures, and memorials that tell the story of the region. Palm trees provide shade, and benches offer resting spots with million-dollar ocean views. The Foreshore Art Trail features numerous commissioned artworks, from abstract sculptures to figurative pieces, creating an outdoor gallery that changes with the light throughout the day. Street performers, from musicians to living statues, add to the entertainment. The Esplanade connects the major beach access points and provides the primary north-south pedestrian route through Surfers Paradise. Fitness enthusiasts use the path for jogging and cycling, while families enjoy the adjacent playgrounds and grassed areas. At various points, viewing platforms extend toward the beach, offering elevated perspectives of the surf. The Esplanade captures the essence of the Gold Coast lifestyle - outdoor, active, and connected to the ocean. During markets and events, this becomes the most vibrant stretch of the coast.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Surfers_Paradise_Esplanade.jpg/800px-Surfers_Paradise_Esplanade.jpg",
+      "latitude": -28.00050,
+      "longitude": 153.43150,
+      "category": "public-art",
+      "address": "The Esplanade, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "ripleys-odditorium",
+      "name": "Ripley's Believe It or Not! Odditorium",
+      "description": "Ripley's Believe It or Not! Odditorium brings a world of the weird and wonderful to the heart of Surfers Paradise, housing hundreds of mind-bending artifacts collected from around the globe. Located on Cavill Avenue, this museum of curiosities features exhibits that challenge perception and showcase the extraordinary diversity of human achievement and natural phenomena. Highlights include a meteorite from Mars, a towering gorilla made entirely from recycled tyre rubber, shrunken heads from the Amazon, and countless optical illusions that will have you questioning reality. The collection is based on the travels of Robert Ripley, who spent his life seeking out the strange, unusual, and unbelievable. Interactive exhibits allow visitors to test their own abilities against world record holders. The exterior of the building itself is an attraction, designed to appear as though it's being swallowed by the earth or twisted by supernatural forces. This quirky museum provides a perfect escape from the beach on a rainy day and offers entertaining photo opportunities throughout. The gift shop continues the theme with unusual souvenirs you won't find anywhere else.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Ripleys_Surfers_Paradise.jpg/600px-Ripleys_Surfers_Paradise.jpg",
+      "latitude": -28.00140,
+      "longitude": 153.42920,
+      "category": "attraction",
+      "address": "Soul Boardwalk, Cavill Avenue, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "wax-museum",
+      "name": "The Wax Museum Gold Coast",
+      "description": "The Wax Museum Gold Coast is home to the largest collection of authentic wax figures in the Southern Hemisphere, featuring over 100 lifelike creations ranging from historical personalities to contemporary celebrities. Located in the heart of Surfers Paradise, this attraction offers visitors the chance to pose alongside uncanny recreations of world leaders, sports stars, musicians, and movie icons. The museum has been a fixture of the Gold Coast tourism scene for decades, continually updating its collection to include current celebrities and cultural figures. The craftsmanship involved in creating these figures is remarkable, with each requiring months of work by skilled artists. Special themed areas include horror sections that test the nerves of visitors and historical galleries featuring figures from Australian and world history. The museum provides endless photo opportunities, allowing visitors to 'meet' celebrities they might never encounter in real life. Regular additions to the collection keep the experience fresh for repeat visitors. Interactive elements and behind-the-scenes information about wax figure creation add educational value to the entertainment.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Gold_Coast_Wax_Museum.jpg/600px-Gold_Coast_Wax_Museum.jpg",
+      "latitude": -28.00180,
+      "longitude": 153.42850,
+      "category": "attraction",
+      "address": "56 Ferny Avenue, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "infinity",
+      "name": "Infinity Attraction",
+      "description": "Infinity is an interactive fun house unlike anything else on the Gold Coast, featuring over 20 science fiction-like mazes and rooms filled with special effects, soundscapes, and optical illusions. This surreal attraction takes visitors on a journey through darkness and light, using cutting-edge technology to create environments that challenge perception and spark wonder. Each room offers a completely different experience, from laser mazes to infinity mirror rooms, sensory chambers to gravity-defying spaces. The attraction is designed for all ages but particularly appeals to those who enjoy pushing their sensory boundaries. Unlike traditional haunted houses, Infinity focuses on wonder rather than fear, creating beautiful and disorienting spaces that feel like stepping into another dimension. The experience takes approximately 30 minutes, though many visitors find themselves lingering in favourite rooms. Photography is encouraged, and the unusual lighting creates spectacular images. Infinity has won multiple tourism awards and is consistently rated as one of the must-do attractions in Surfers Paradise. The entrance, with its space-age design, draws curious passersby into its otherworldly embrace.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Infinity_Gold_Coast.jpg/600px-Infinity_Gold_Coast.jpg",
+      "latitude": -28.00160,
+      "longitude": 153.42890,
+      "category": "attraction",
+      "address": "Chevron Renaissance, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "circle-on-cavill",
+      "name": "Circle on Cavill",
+      "description": "Circle on Cavill is a landmark mixed-use development that has become a central feature of the Surfers Paradise streetscape. The complex features twin residential towers rising above a retail and entertainment podium, with the distinctive circular architectural element that gives the development its name. The ground level houses numerous restaurants, cafes, and shops, creating a vibrant pedestrian precinct that extends Cavill Avenue's retail offering. The design incorporates public spaces and walkways that connect to surrounding streets, making it a natural thoroughfare for visitors exploring Surfers Paradise. The development represents the modern evolution of Gold Coast architecture, combining residential, commercial, and entertainment uses in a single integrated complex. The central plaza area hosts occasional events and provides outdoor dining opportunities. From certain angles, the towers frame views of the ocean, creating interesting photographic compositions. The complex's location at the corner of Cavill Avenue and Ferny Avenue makes it impossible to miss when walking through the main commercial district. Evening lighting transforms the building into a glowing landmark on the Surfers Paradise skyline.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Circle_on_Cavill.jpg/600px-Circle_on_Cavill.jpg",
+      "latitude": -28.00120,
+      "longitude": 153.42780,
+      "category": "landmark",
+      "address": "9 Ferny Avenue, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "paradise-centre",
+      "name": "Paradise Centre",
+      "description": "The Paradise Centre is one of Surfers Paradise's original shopping destinations, occupying a prime location on Cavill Avenue just steps from the beach. This multi-level retail complex has served as a shopping hub for both tourists and locals since its opening, offering a mix of fashion retailers, specialty stores, food outlets, and services. The centre connects Cavill Avenue to Hanlan Street, creating a covered pedestrian route that's particularly welcome on rainy days or during the summer heat. Over the years, the centre has evolved to meet changing retail trends, with recent renovations modernising the facility while maintaining its central role in Surfers Paradise commerce. The food court offers a variety of quick dining options, from traditional Australian fare to international cuisines. Ground floor retailers spill out onto Cavill Avenue, blurring the line between indoor and outdoor shopping. The centre's location at the heart of the tourist precinct ensures a constant flow of visitors. For walking tour participants, it serves as a useful landmark and meeting point, as well as offering restroom facilities and refreshments.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/p/pa/Paradise_Centre_Surfers.jpg/600px-Paradise_Centre_Surfers.jpg",
+      "latitude": -28.00145,
+      "longitude": 153.42950,
+      "category": "landmark",
+      "address": "Cavill Avenue, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "soul-building",
+      "name": "Soul Building",
+      "description": "The Soul Building is one of the most striking contemporary additions to the Surfers Paradise skyline, featuring a distinctive curved facade that appears to twist as it rises from the ground. Completed in 2012, this 243-metre residential tower was designed to capture maximum ocean views from every apartment while creating a dynamic visual impact from the street. The building's name reflects its aspiration to become the soul of Surfers Paradise, offering premium living in the heart of the entertainment precinct. At ground level, the Soul Boardwalk creates an attractive pedestrian link between Cavill Avenue and the Esplanade, lined with restaurants, bars, and retail outlets. The curved glass facade reflects the sky and surrounding buildings, creating ever-changing visual effects throughout the day. Evening lighting emphasizes the building's sculptural form. Soul represented a new era in Gold Coast architecture, moving away from the boxy towers of earlier decades toward more organic, expressive designs. For photographers, the building offers interesting compositional opportunities, especially when framed against the beach or contrasted with older structures nearby.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/s/so/Soul_Building_Surfers.jpg/600px-Soul_Building_Surfers.jpg",
+      "latitude": -28.00130,
+      "longitude": 153.42970,
+      "category": "landmark",
+      "address": "4 The Esplanade, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "ocean-building",
+      "name": "Ocean Building",
+      "description": "The Ocean building, completed in 2022, stands as the second tallest structure on the Gold Coast at 264.6 metres across its 78 storeys. This residential skyscraper represents the latest generation of Gold Coast high-rises, incorporating cutting-edge design and sustainable building practices. The building's sleek facade and impressive height have added a new dimension to the famous Surfers Paradise skyline, visible from kilometres away. Located on Northcliffe Terrace, Ocean offers residents spectacular views from Stradbroke Island to the hinterland ranges. The development includes resort-style amenities and has set new benchmarks for luxury living on the coast. For architecture enthusiasts, Ocean demonstrates how far Gold Coast construction has evolved from the modest beginnings of Kinkabool in 1959. The building's night lighting creates a beacon effect, adding to the glittering skyline that makes Surfers Paradise instantly recognisable. Street-level elements include landscaped areas and public spaces that integrate the tower with its surroundings. The contrast between Ocean and the older towers nearby provides a visual timeline of Gold Coast development.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/o/oc/Ocean_Gold_Coast.jpg/600px-Ocean_Gold_Coast.jpg",
+      "latitude": -27.99730,
+      "longitude": 153.42880,
+      "category": "landmark",
+      "address": "9 Northcliffe Terrace, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "commonwealth-games-clock",
+      "name": "2018 Commonwealth Games Countdown Clock",
+      "description": "The 2018 Commonwealth Games Countdown Clock stands as a permanent reminder of the Gold Coast's proudest moment - hosting the Commonwealth Games in April 2018. This decorative timepiece was installed in Surfers Paradise to count down the days, hours, and minutes until the opening ceremony, building excitement among locals and visitors alike. When the countdown reached zero, the clock witnessed scenes of jubilation as the Gold Coast took its place on the world sporting stage. The Games brought athletes from 71 nations to the coast, with many events held in venues throughout the region. The clock remains in place as a memorial to this historic occasion, now displaying the current time and serving as a popular photo spot for visitors. The structure's design incorporates elements reflecting the Games' theme and the Gold Coast's identity as Australia's premier sporting and events destination. Located near the beachfront, the clock provides a focal point for gatherings and is particularly photogenic when illuminated at night. It represents a significant chapter in the Gold Coast's transition from holiday town to international city.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Commonwealth_Games_Clock_Gold_Coast.jpg/600px-Commonwealth_Games_Clock_Gold_Coast.jpg",
+      "latitude": -28.00095,
+      "longitude": 153.43050,
+      "category": "public-art",
+      "address": "The Esplanade, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "all-eyes-on-us-sculpture",
+      "name": "All Eyes On Us - The Commonwealth Star Sculpture",
+      "description": "All Eyes On Us - The Commonwealth Star is a striking public art installation created to commemorate the 2018 Commonwealth Games held on the Gold Coast. This sculptural work captures the spirit of the event and the eyes of the world that turned toward this coastal city during the Games. The artwork features symbolic elements representing the unity of Commonwealth nations and the sporting excellence celebrated during the competition. Located along the Surfers Paradise foreshore, the sculpture has become a permanent addition to the public art trail that adorns the Esplanade. The design encourages interaction, with visitors encouraged to view the work from different angles to appreciate its various perspectives and meanings. Like many public artworks along the foreshore, it reflects the Gold Coast's commitment to enhancing public spaces with cultural elements. The sculpture is particularly striking when photographed against the ocean backdrop or illuminated by the evening sun. It serves as both an artistic statement and a historical marker, reminding future generations of the two weeks when the Gold Coast hosted the world's athletes.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/All_Eyes_On_Us_Sculpture.jpg/600px-All_Eyes_On_Us_Sculpture.jpg",
+      "latitude": -28.00180,
+      "longitude": 153.43120,
+      "category": "public-art",
+      "address": "The Esplanade, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "nerang-river",
+      "name": "Nerang River Foreshore",
+      "description": "The Nerang River provides a scenic contrast to the ocean beaches, offering calm waters and riverside walks just minutes from Surfers Paradise's bustling centre. This tidal river winds through the Gold Coast, and the section near Surfers Paradise features attractive foreshore parklands, walking paths, and views across to Isle of Capri and Chevron Island. The river was vital to the early development of the region, with boats providing access before roads were established. Today, ferry services and private boats cruise the waterway, while kayakers and paddleboarders enjoy the calm conditions. The riverside walk connects HOTA (Home of the Arts) to Surfers Paradise, offering a pleasant alternative to the busy streets. Fishermen are often seen trying their luck from the riverbanks, continuing a tradition that predates tourism. The mix of high-rise towers reflected in the calm river waters creates distinctive photographic opportunities, especially at sunset when the buildings glow golden. Several restaurants and cafes along the riverside offer waterfront dining with views across to the canal estates that characterize much of the Gold Coast.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/n/ne/Nerang_River_Surfers.jpg/800px-Nerang_River_Surfers.jpg",
+      "latitude": -28.00450,
+      "longitude": 153.42100,
+      "category": "beach",
+      "address": "Nerang River, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "budds-beach",
+      "name": "Budds Beach",
+      "description": "Budds Beach offers a quieter alternative to the main Surfers Paradise Beach, located at the southern end of the tourist precinct where the Nerang River meets the Broadwater. This sheltered beach is particularly popular with families due to its calm waters and gentler conditions compared to the ocean beaches. The grassy parkland behind the beach provides shaded areas for picnics and barbecues, while the nearby playground keeps children entertained. Named after the Budd family who were early settlers in the area, this beach connects Surfers Paradise to the broader Broadwater waterway system. Kayakers and stand-up paddleboarders launch from here to explore the calm inland waters. The beach offers different perspectives of the Surfers Paradise skyline, with the towers creating a dramatic backdrop to the natural setting. During low tide, the sand flats extend considerably, revealing rock pools and marine life. The area hosts occasional community events and is a favourite spot for locals seeking respite from the tourist crowds. Walking along Budds Beach provides a sense of the Gold Coast's geographical diversity.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bu/Budds_Beach.jpg/800px-Budds_Beach.jpg",
+      "latitude": -28.00850,
+      "longitude": 153.42500,
+      "category": "beach",
+      "address": "River Drive, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "glink-cavill-station",
+      "name": "G:link Light Rail - Cavill Avenue Station",
+      "description": "The Cavill Avenue G:link station represents the Gold Coast's transformation into a modern, connected city. The G:link light rail system opened in 2014, connecting Surfers Paradise to Broadbeach, Southport, and beyond. This station, located at the corner of Surfers Paradise Boulevard and Cavill Avenue, serves as the primary public transport hub for visitors to the tourist precinct. The sleek, modern tram stops feature distinctive Gold Coast-branded architecture and provide shelter from the subtropical weather. The light rail has revolutionized how visitors explore the coast, offering a convenient alternative to driving and parking. Trains run frequently, whisking passengers between beaches, shopping centres, and entertainment venues. The station's location makes it an ideal starting or ending point for walking tours of Surfers Paradise. The G:link represents significant investment in public infrastructure and reflects the Gold Coast's growth from holiday town to city. For visitors, the system provides an efficient way to experience the broader Gold Coast beyond Surfers Paradise, with connections extending to Helensvale railway station for travel to Brisbane.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/g/gl/GLink_Cavill_Station.jpg/800px-GLink_Cavill_Station.jpg",
+      "latitude": -28.00020,
+      "longitude": 153.42700,
+      "category": "landmark",
+      "address": "Surfers Paradise Boulevard, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "orchid-avenue",
+      "name": "Orchid Avenue Entertainment Precinct",
+      "description": "Orchid Avenue is the heart of Surfers Paradise's famous nightlife scene, running parallel to Cavill Avenue and offering a different energy once the sun goes down. This strip has earned its reputation as the Gold Coast's premier entertainment precinct, lined with nightclubs, bars, live music venues, and late-night eateries. The avenue comes alive after dark, with neon signs illuminating the street and music spilling from countless venues. While primarily known for nightlife, Orchid Avenue also offers daytime attractions including restaurants and quirky shops. The street represents the more adult side of Surfers Paradise, earning nicknames like 'the Glitter Strip' for its flashy atmosphere. Major venues along Orchid Avenue have hosted international acts and local talent for decades. The area has been carefully managed to balance entertainment with community amenities, with significant investment in street lighting, CCTV, and pedestrian safety. For walking tours, Orchid Avenue provides insight into the complete Surfers Paradise experience - from family beaches by day to vibrant entertainment by night. The contrast with the daytime atmosphere reveals the dual nature of this fascinating suburb.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/o/or/Orchid_Avenue_Surfers.jpg/800px-Orchid_Avenue_Surfers.jpg",
+      "latitude": -28.00100,
+      "longitude": 153.42600,
+      "category": "attraction",
+      "address": "Orchid Avenue, Surfers Paradise QLD 4217"
+    },
+    {
+      "id": "steampunk-bar",
+      "name": "Steampunk Bar & Restaurant",
+      "description": "Steampunk Surfers Paradise offers a unique themed dining and entertainment experience, immersing visitors in a fantastical world of Victorian-era industrial aesthetics meets science fiction. This quirky venue is decorated with exposed gears, brass pipes, antique machinery, and inventive contraptions that would make Jules Verne proud. Every corner reveals new details - from the elaborate ceiling installations to the custom light fixtures and thematic furnishings. The venue regularly hosts live entertainment, adding to the otherworldly atmosphere with performers who embrace the steampunk aesthetic. The menu combines quality pub fare with creative presentations that match the venue's imaginative theme. Staff members often dress in period-inspired costumes, enhancing the immersive experience. Steampunk has become a favourite spot for both locals and tourists seeking something different from typical Gold Coast venues. The exterior alone, with its industrial-themed decorations and vintage signage, draws curious passersby. For photography enthusiasts, the interior provides endless opportunities for creative shots. This venue exemplifies the Gold Coast's embrace of themed entertainment and its willingness to offer visitors unique experiences beyond sun and surf.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/s/st/Steampunk_Surfers.jpg/600px-Steampunk_Surfers.jpg",
+      "latitude": -28.00175,
+      "longitude": 153.42820,
+      "category": "attraction",
+      "address": "Soul Boardwalk, Cavill Avenue, Surfers Paradise QLD 4217"
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2024-12-28",
+    "totalPlaces": 25,
+    "tourDuration": "Approximately 60-90 minutes",
+    "tourDistance": "Approximately 3-4 kilometres",
+    "region": "Surfers Paradise, Gold Coast, Queensland, Australia",
+    "coordinates": {
+      "centerLat": -28.00200,
+      "centerLng": 153.42900
+    }
+  }
+}
+
