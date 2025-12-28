@@ -1,0 +1,156 @@
+// App component global styles
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// Header Styles
+.app-header {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .nav-brand {
+      .brand-link {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+          font-size: 1.8rem;
+          margin: 0;
+          color: #667eea;
+          font-weight: 700;
+        }
+
+        .brand-subtitle {
+          font-size: 0.85rem;
+          color: #666;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 2rem;
+      align-items: center;
+
+      li {
+        a {
+          text-decoration: none;
+          color: #333;
+          font-weight: 500;
+          font-size: 1rem;
+          transition: color 0.3s ease;
+          padding: 0.5rem 0;
+
+          &:hover,
+          &.active {
+            color: #667eea;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Main Content Area
+.app-main {
+  flex: 1;
+  background: #f9f9f9;
+}
+
+// Footer Styles
+.app-footer {
+  background: #333;
+  color: white;
+  padding: 2rem 1rem;
+  margin-top: auto;
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+
+    p {
+      margin: 0.5rem 0;
+      color: #ccc;
+    }
+
+    .footer-note {
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    .footer-social {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .instagram-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #ccc;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+
+        &:hover,
+        &:focus {
+          color: #fff;
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .instagram-icon {
+          width: 24px;
+          height: 24px;
+          fill: currentColor;
+        }
+
+        span {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .app-header {
+    .navbar {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+
+      .nav-menu {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  }
+}
+

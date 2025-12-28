@@ -1,0 +1,85 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Gold Coast Unhistorical Walking Tours</h1>
+      <p class="tagline">Discover the quirky, unusual, and fascinating side of Surfers Paradise</p>
+      <p class="description">
+        Join us for a one-hour walking tour covering 25 unique locations that tell the story 
+        of how the Gold Coast transformed from a quiet coastal village into Australia's premier 
+        holiday destination. From historic landmarks to quirky attractions, explore the places 
+        that make Surfers Paradise truly unique.
+      </p>
+      <div class="tour-info">
+        <div class="info-item">
+          <strong>Duration:</strong> 60-90 minutes
+        </div>
+        <div class="info-item">
+          <strong>Distance:</strong> 3-4 kilometres
+        </div>
+        <div class="info-item">
+          <strong>Starting Point:</strong> G:link Cavill Avenue Station or Q1 Tower
+        </div>
+      </div>
+      <div class="cta-buttons">
+        <a routerLink="/places" class="btn btn-primary">View All Places</a>
+        <a routerLink="/places" class="btn btn-secondary">Book a Tour</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Map Section -->
+  <section class="map-section">
+    <h2>Explore Our Tour Route</h2>
+    <p class="map-description">
+      Click on the markers to see all the places we'll visit on our walking tour. 
+      Each location has its own story to tell about the Gold Coast's unique history.
+    </p>
+    <div class="map-container">
+      @if (placesData(); as data) {
+        <google-map
+          [options]="mapOptions"
+          [center]="mapCenter()"
+          [width]="'100%'"
+          [height]="'600px'">
+          @for (marker of markers(); track marker.position) {
+            <map-marker [options]="marker"></map-marker>
+          }
+        </google-map>
+      } @else {
+        <div class="map-loading">Loading map...</div>
+      }
+    </div>
+  </section>
+
+  <!-- Featured Places Preview -->
+  <section class="featured-places">
+    <h2>Featured Places</h2>
+    <div class="places-grid">
+      @if (places(); as placesList) {
+        @for (place of placesList.slice(0, 6); track place.id) {
+          <article class="place-card">
+            <a [routerLink]="['/places', place.id, place.name.toLowerCase().replace(/\s+/g, '-')]">
+              <div class="place-image">
+                <app-responsive-image 
+                  [placeId]="place.id" 
+                  [altText]="place.name">
+                </app-responsive-image>
+              </div>
+              <div class="place-content">
+                <h3>{{ place.name }}</h3>
+                <p class="place-category">{{ place.category }}</p>
+                <p class="place-description">{{ place.description.substring(0, 150) }}...</p>
+              </div>
+            </a>
+          </article>
+        }
+      } @else {
+        <p>Loading places...</p>
+      }
+    </div>
+    <div class="view-all">
+      <a routerLink="/places" class="btn btn-outline">View All 25 Places</a>
+    </div>
+  </section>
+</div>

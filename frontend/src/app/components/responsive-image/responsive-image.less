@@ -1,0 +1,17 @@
+// Responsive Image Component Styles
+// Uses breakpoints from base styles.less
+
+img {
+  // Ensure image is responsive and maintains aspect ratio
+  max-width: 100%;
+  height: auto;
+  display: block;
+  
+  // Smooth image loading
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  
+  // Prevent layout shift during image load
+  background-color: #f0f0f0;
+}
+

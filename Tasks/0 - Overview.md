@@ -16,5 +16,6 @@ Even though The Gold Coast is not very interesting in the normal, traditional se
 * No third-party CSS libraries are necessary, other than the LESS CSS preprocessor
 * Layout will be done using CSS Flexbox and CSS Grid    
 * Each place should have its own web address, along the lines of /places/{id}/{slug}
+* Use Google Maps to embed any maps
 * Data will come from a top-level Data folder in the server layer, with JSON files, such as places.json replacing traditional relational tables
 * The front-end will interact with the back-end using a traditional API system. No authentication is required for now.

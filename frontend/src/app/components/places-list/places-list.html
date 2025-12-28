@@ -1,0 +1,87 @@
+<div class="places-list-container">
+  <header class="page-header">
+    <h1>All Places</h1>
+    <p class="subtitle">Discover 25 unique locations on the Gold Coast Unhistorical Walking Tour</p>
+  </header>
+
+  <!-- Search and Filter Controls -->
+  <div class="controls">
+    <div class="search-box">
+      <input
+        type="text"
+        placeholder="Search places..."
+        [value]="searchTerm()"
+        (input)="onSearchChange($event)"
+        class="search-input"
+        aria-label="Search places">
+    </div>
+    
+    <div class="filter-box">
+      <label for="category-filter">Filter by category:</label>
+      <select
+        id="category-filter"
+        [value]="selectedCategory()"
+        (change)="onCategoryChange($event)"
+        class="category-select"
+        aria-label="Filter by category">
+        <option value="all">All Categories</option>
+        @for (category of getCategories(); track category) {
+          <option [value]="category">{{ category | titlecase }}</option>
+        }
+      </select>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  @if (loading()) {
+    <div class="loading-message">
+      <p>Loading places...</p>
+    </div>
+  }
+
+  <!-- Error State -->
+  @if (error(); as errorMessage) {
+    <div class="error-message">
+      <p>{{ errorMessage }}</p>
+      <button (click)="loadPlaces()" class="btn btn-primary">Try Again</button>
+    </div>
+  }
+
+  <!-- Places Grid -->
+  @if (!loading() && !error()) {
+    @if (filteredPlaces().length > 0) {
+      <div class="places-grid">
+        @for (place of filteredPlaces(); track place.id) {
+          <article class="place-card">
+            <a [routerLink]="['/places', place.id, getSlug(place.name)]">
+              <div class="place-image">
+                <app-responsive-image 
+                  [placeId]="place.id" 
+                  [altText]="place.name">
+                </app-responsive-image>
+                <span class="place-category-badge">{{ place.category }}</span>
+              </div>
+              <div class="place-content">
+                <h2>{{ place.name }}</h2>
+                <p class="place-address">{{ place.address }}</p>
+                <p class="place-description">{{ place.description.substring(0, 200) }}...</p>
+                <span class="read-more">Read more →</span>
+              </div>
+            </a>
+          </article>
+        }
+      </div>
+      
+      <div class="results-count">
+        Showing {{ filteredPlaces().length }} of {{ places().length }} places
+      </div>
+    } @else {
+      <div class="no-results">
+        <p>No places found matching your search criteria.</p>
+        <button (click)="searchTerm.set(''); selectedCategory.set('all')" class="btn btn-outline">
+          Clear Filters
+        </button>
+      </div>
+    }
+  }
+</div>

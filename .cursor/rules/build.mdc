@@ -1,0 +1,4 @@
+---
+alwaysApply: true
+---
+ALways build the project, front-end and back-end after applying any changes, to verify that the changes have been successful.
