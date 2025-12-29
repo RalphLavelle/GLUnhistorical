@@ -23,8 +23,11 @@
   "private": true,
   "packageManager": "npm@10.9.0",
   "dependencies": {
+    "@angular/build": "^21.0.4",
+    "@angular/cli": "^21.0.4",
     "@angular/common": "^21.0.0",
     "@angular/compiler": "^21.0.0",
+    "@angular/compiler-cli": "^21.0.0",
     "@angular/core": "^21.0.0",
     "@angular/forms": "^21.0.0",
     "@angular/google-maps": "^21.0.5",
@@ -34,9 +37,6 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@angular/build": "^21.0.4",
-    "@angular/cli": "^21.0.4",
-    "@angular/compiler-cli": "^21.0.0",
     "jsdom": "^27.1.0",
     "less": "^4.2.0",
     "typescript": "~5.9.2",

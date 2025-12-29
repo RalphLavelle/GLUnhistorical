@@ -21,8 +21,6 @@ services:
       set -e
       echo "Installing frontend dependencies..."
       cd frontend && npm install --legacy-peer-deps
-      echo "INstalling Angular"
-      npm install -g @angular/cli && ng build
       echo "Building frontend (production)..."
       npm run build -- --configuration production
       echo "Installing backend dependencies..."
