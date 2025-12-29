@@ -1,0 +1,14 @@
+{
+  "name": "gcunhistorical",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gold Coast Unhistorical Walking Tours - Angular frontend with Express backend",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build && cd ../backend && npm install && npm run build",
+    "start": "cd backend && npm start"
+  }
+}
+
