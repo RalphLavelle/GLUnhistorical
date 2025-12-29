@@ -14,6 +14,12 @@ build/
 .env.local
 .env.*.local
 
+# Angular environment files (may contain API keys)
+frontend/src/environments/environment.ts
+frontend/src/environments/environment.prod.ts
+frontend/src/environments/environment.*.ts
+!frontend/src/environments/environment.example.ts
+
 # IDE
 .vscode/
 .idea/

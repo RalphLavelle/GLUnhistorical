@@ -48,18 +48,25 @@ cd frontend
 npm install
 ```
 
-### 2. Configure Google Maps API
+### 2. Configure Google Maps API Key
+
+**Important**: The API key is now stored in environment variables for security. See [docs/GOOGLE_MAPS_API_KEY_SETUP.md](docs/GOOGLE_MAPS_API_KEY_SETUP.md) for detailed instructions.
+
+**Quick Setup:**
 
 1. Get a Google Maps API key from the [Google Cloud Console](https://console.cloud.google.com/)
 2. Enable the following APIs:
    - Maps JavaScript API
    - Places API (optional, for enhanced features)
-3. Update `frontend/src/index.html`:
-   - Replace `YOUR_API_KEY` with your actual Google Maps API key
+3. Create environment files:
+   ```powershell
+   cd frontend\src\environments
+   Copy-Item environment.example.ts environment.ts
+   ```
+4. Edit `frontend/src/environments/environment.ts`:
+   - Replace `YOUR_GOOGLE_MAPS_API_KEY` with your actual API key
 
-```html
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
-```
+**Security Note**: If you previously committed your API key to Git, rotate it in Google Cloud Console and update your environment files with the new key.
 
 ### 3. Start the Backend Server
 
@@ -129,6 +136,45 @@ GCObscura/
 - `/` - Home page with tour information and interactive map
 - `/places` - List of all places with search and filters
 - `/places/:id/:slug` - Individual place detail page
+
+## Deployment
+
+### DigitalOcean App Platform
+
+This application is configured for deployment on DigitalOcean App Platform. The Express backend serves both the API and the Angular frontend static files in production.
+
+**Prerequisites:**
+- DigitalOcean account
+- MongoDB Atlas account (free M0 cluster)
+- GitHub repository
+
+**Quick Deploy:**
+
+1. Push your code to GitHub
+2. Go to [DigitalOcean App Platform](https://cloud.digitalocean.com/apps)
+3. Click **Create App** and connect your GitHub repository
+4. Configure:
+   - **Build Command**: `cd frontend && npm install && npm run build && cd ../backend && npm install && npm run build`
+     - *Note: Uses `&&` (bash syntax) because DigitalOcean runs on Linux. For local PowerShell testing, use `.\scripts\build-production.ps1`*
+   - **Run Command**: `cd backend && npm start`
+   - **HTTP Port**: `3000`
+5. Set environment variables:
+   - `NODE_ENV` = `production`
+   - `MONGODB_URI` = Your MongoDB Atlas connection string
+   - `MONGODB_DB_NAME` = `gcobscura`
+6. Deploy and seed database: `cd backend && npm run seed`
+
+**Local Testing (PowerShell):**
+```powershell
+# Test production build locally
+.\scripts\build-production.ps1
+
+# Or manually:
+cd frontend; npm install; npm run build
+cd ..\backend; npm install; npm run build
+```
+
+For detailed deployment instructions, see [docs/DIGITALOCEAN_DEPLOYMENT.md](docs/DIGITALOCEAN_DEPLOYMENT.md)
 
 ## Data Format
 

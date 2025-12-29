@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
+import * as path from 'path';
 import { Db } from 'mongodb';
 import { connectToMongo } from './db/mongo';
 import { getPlaceById, getPlacesResponse } from './repositories/places.repo';
@@ -60,6 +61,41 @@ app.get('/api/health', async (req: Request, res: Response) => {
     res.status(500).json({ status: 'error' });
   }
 });
+
+// Development mode: helpful message for root route
+if (process.env.NODE_ENV !== 'production') {
+  app.get('/', (req: Request, res: Response) => {
+    res.json({
+      message: 'Express API Server',
+      status: 'running',
+      apiEndpoints: [
+        'GET /api/places - Get all places',
+        'GET /api/places/:id - Get a single place',
+        'POST /api/tourists - Submit a booking',
+        'GET /api/health - Health check'
+      ],
+      frontend: 'Angular dev server runs on http://localhost:4200',
+      note: 'In production, this server also serves the Angular frontend'
+    });
+  });
+}
+
+// Serve Angular frontend in production
+// This allows Express to serve the built Angular app as static files
+if (process.env.NODE_ENV === 'production') {
+  const frontendPath = path.join(__dirname, '..', '..', 'frontend', 'dist', 'frontend', 'browser');
+  app.use(express.static(frontendPath));
+
+  // Handle Angular routes (SPA fallback - must be last route)
+  // This ensures Angular routing works when users navigate directly to routes like /places
+  app.get('*', (req: Request, res: Response) => {
+    // Don't serve index.html for API routes (should have been caught above)
+    if (req.path.startsWith('/api/')) {
+      return res.status(404).json({ error: 'API endpoint not found' });
+    }
+    res.sendFile(path.join(frontendPath, 'index.html'));
+  });
+}
 
 async function start(): Promise<void> {
   db = await connectToMongo();
