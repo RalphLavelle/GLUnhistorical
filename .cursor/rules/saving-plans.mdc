@@ -1,0 +1,6 @@
+---
+alwaysApply: true
+---
+
+# Save plans in the project itself, not outside of it
+Always save plans into the /docs/plans folder. Create this folder if it doesn't already exist.

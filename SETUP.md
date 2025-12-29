@@ -15,13 +15,48 @@ cd backend
 npm install
 ```
 
+### 2. Start MongoDB (local, via Docker)
+
+This project now uses **MongoDB** for persistent storage (places + tour bookings).
+
+1. Install Docker Desktop (if you don't already have it)
+2. Start Docker Desktop (the daemon must be running)
+3. In a terminal:
+
+```bash
+cd backend
+docker compose up -d
+```
+
+### 3. Configure backend environment variables (local)
+
+Create a local env file for the backend:
+
+- Copy `backend/env.example` to `backend/.env`
+
+If you're using the local Docker MongoDB, the defaults in the example are correct:
+
+- `MONGODB_URI=mongodb://localhost:27017`
+- `MONGODB_DB_NAME=gcobscura`
+
+### 4. Seed MongoDB with the existing JSON data (one-time)
+
+This imports:
+- `backend/data/places.json` (places + metadata)
+- `backend/data/tourists.json` (existing bookings, if any)
+
+```bash
+cd backend
+npm run seed
+```
+
 ### 2. Install Frontend Dependencies
 ```bash
 cd ../frontend
 npm install
 ```
 
-### 3. Configure Google Maps API Key
+### 5. Configure Google Maps API Key
 
 Edit `frontend/src/index.html` and replace `YOUR_API_KEY` with your actual Google Maps API key:
 
@@ -29,7 +64,7 @@ Edit `frontend/src/index.html` and replace `YOUR_API_KEY` with your actual Googl
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_ACTUAL_API_KEY&libraries=places"></script>
 ```
 
-### 4. Start Backend Server
+### 6. Start Backend Server
 
 Open a terminal and run:
 ```bash
@@ -64,7 +99,8 @@ The app will open at `http://localhost:4200`
 
 ### API Errors
 - Ensure backend server is running on port 3000
-- Check that `Data/places.json` exists and is valid JSON
+- Ensure MongoDB is running (Docker Desktop + `docker compose up -d`)
+- Ensure you've seeded the database at least once (`npm run seed`)
 - Verify proxy configuration in `frontend/proxy.conf.json`
 
 ### Port Already in Use

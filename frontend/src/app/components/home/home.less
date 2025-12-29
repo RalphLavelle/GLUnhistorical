@@ -191,49 +191,6 @@
   }
 }
 
-// Button Styles
-.btn {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  cursor: pointer;
-
-  &.btn-primary {
-    background: @color-bg-surface;
-    color: @color-primary;
-    border-color: @color-bg-surface;
-
-    &:hover {
-      background: @color-bg-placeholder;
-    }
-  }
-
-  &.btn-secondary {
-    background: transparent;
-    color: white;
-    border-color: white;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-  }
-
-  &.btn-outline {
-    background: transparent;
-    color: @color-primary;
-    border-color: @color-primary;
-
-    &:hover {
-      background: @color-primary;
-      color: white;
-    }
-  }
-}
-
 // Responsive Design
 @media (max-width: 768px) {
   .hero {

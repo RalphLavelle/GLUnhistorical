@@ -23,6 +23,7 @@ A web application showcasing interesting and quirky places in Surfers Paradise, 
 ### Backend
 - Node.js with Express
 - TypeScript
+- MongoDB (persistent storage for places + tour bookings)
 - RESTful API endpoints
 
 ## Prerequisites
@@ -92,6 +93,9 @@ GCObscura/
 ├── backend/                 # Node.js/Express backend
 │   ├── src/
 │   │   └── server.ts       # Express server and API routes
+│   ├── data/               # Data files (places.json, tourists.json)
+│   │   ├── places.json    # Places data (served by backend)
+│   │   └── tourists.json  # Tour bookings data
 │   ├── package.json
 │   └── tsconfig.json
 ├── frontend/                # Angular frontend
@@ -103,8 +107,6 @@ GCObscura/
 │   │   │   └── app.*      # Root app component
 │   │   └── index.html
 │   └── angular.json
-├── Data/
-│   └── places.json        # Places data (served by backend)
 └── README.md
 ```
 
@@ -130,7 +132,7 @@ GCObscura/
 
 ## Data Format
 
-Places data is stored in `Data/places.json` with the following structure:
+Places data has the following structure:
 
 ```json
 {
@@ -165,7 +167,8 @@ For production deployment, you may want to:
 
 ## Notes
 
-- The backend serves static JSON files from the `Data` directory
+- The backend uses MongoDB for persistence.
+- The JSON files in `backend/data` are kept as **seed/backup data**, and can be imported into MongoDB using `npm run seed` from the `backend` directory.
 - No authentication is required for the API endpoints
 - Google Maps requires a valid API key to function
 - The application uses lazy loading for routes to optimize performance

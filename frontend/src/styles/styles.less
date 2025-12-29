@@ -84,3 +84,87 @@ input, select, textarea {
   white-space: nowrap;
   border-width: 0;
 }
+
+// =============================================================================
+// BUTTON STYLES
+// =============================================================================
+// Reusable button classes used throughout the application.
+// Use .btn as base, then add a variant class for styling.
+// =============================================================================
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-align: center;
+
+  // Primary button - solid primary color background
+  &.btn-primary {
+    background: @color-primary;
+    color: white;
+    border-color: @color-primary;
+
+    &:hover:not(:disabled) {
+      background: @color-primary-dark;
+      border-color: @color-primary-dark;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  // Secondary button - transparent with primary border
+  &.btn-secondary {
+    background: transparent;
+    color: @color-primary;
+    border-color: @color-primary;
+
+    &:hover {
+      background: @color-primary;
+      color: white;
+    }
+  }
+
+  // Outline button - same as secondary (alias for clarity)
+  &.btn-outline {
+    background: transparent;
+    color: @color-primary;
+    border-color: @color-primary;
+
+    &:hover {
+      background: @color-primary;
+      color: white;
+    }
+  }
+
+  // Hero variants - for use on gradient/colored backgrounds
+  // Use these inside hero sections or on dark backgrounds
+  &.btn-hero-primary {
+    background: @color-bg-surface;
+    color: @color-primary;
+    border-color: @color-bg-surface;
+
+    &:hover {
+      background: @color-bg-placeholder;
+    }
+  }
+
+  &.btn-hero-secondary {
+    background: transparent;
+    color: white;
+    border-color: white;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}

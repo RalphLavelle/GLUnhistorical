@@ -29,30 +29,6 @@
   .place-header {
     margin-bottom: 2rem;
 
-    .breadcrumb {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-      color: @color-text-muted;
-
-      a {
-        color: @color-primary;
-        text-decoration: none;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: @color-primary-dark;
-          text-decoration: underline;
-        }
-      }
-
-      span {
-        color: @color-text-subtle;
-      }
-    }
-
     h1 {
       font-size: 2.5rem;
       color: @color-text-primary;
@@ -136,52 +112,6 @@
     padding-top: 2rem;
     border-top: 2px solid @color-border-subtle;
     flex-wrap: wrap;
-  }
-}
-
-// Button Styles
-.btn {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  cursor: pointer;
-  font-size: 1rem;
-
-  &.btn-primary {
-    background: @color-primary;
-    color: white;
-    border-color: @color-primary;
-
-    &:hover {
-      background: @color-primary-dark;
-      border-color: @color-primary-dark;
-    }
-  }
-
-  &.btn-secondary {
-    background: transparent;
-    color: @color-primary;
-    border-color: @color-primary;
-
-    &:hover {
-      background: @color-primary;
-      color: white;
-    }
-  }
-
-  &.btn-outline {
-    background: transparent;
-    color: @color-primary;
-    border-color: @color-primary;
-
-    &:hover {
-      background: @color-primary;
-      color: white;
-    }
   }
 }
 

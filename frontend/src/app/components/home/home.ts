@@ -28,12 +28,12 @@ export class Home implements OnInit {
   
   // Map options - center is set via [center] binding in template
   mapOptions: google.maps.MapOptions = {
-    zoom: 14,
+    zoom: 16,
     mapTypeId: 'roadmap',
     disableDefaultUI: false,
     zoomControl: true,
-    mapTypeControl: false,
-    streetViewControl: false,
+    mapTypeControl: true,
+    streetViewControl: true,
     fullscreenControl: true
   };
 
