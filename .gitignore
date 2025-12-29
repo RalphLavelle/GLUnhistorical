@@ -14,13 +14,6 @@ build/
 .env.local
 .env.*.local
 
-# Angular environment files (may contain API keys)
-# Note: environment.prod.ts is committed (Google Maps API keys are public by design)
-frontend/src/environments/environment.ts
-frontend/src/environments/environment.*.ts
-!frontend/src/environments/environment.prod.ts
-!frontend/src/environments/environment.example.ts
-
 # IDE
 .vscode/
 .idea/
