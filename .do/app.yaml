@@ -16,8 +16,18 @@ services:
     # Explicitly specify Node.js buildpack
     environment_slug: node-js
     # Build command: install dependencies and build both frontend and backend
+    # Using npx ensures ng command is found from node_modules/.bin
+    # Set -e to exit on error, -x to show commands being executed
     build_command: |
-      cd frontend && npm install && npm run build && cd ../backend && npm install && npm run build
+      set -e
+      echo "Installing frontend dependencies..."
+      cd frontend && npm install --legacy-peer-deps
+      echo "Building frontend..."
+      npx ng build --configuration production
+      echo "Installing backend dependencies..."
+      cd ../backend && npm install
+      echo "Building backend..."
+      npm run build
     # Run command: start the Express server (which serves both API and Angular static files)
     run_command: cd backend && npm start
     instance_count: 1
