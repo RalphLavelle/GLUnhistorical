@@ -1,0 +1,26 @@
+[
+  {
+    "id": "booking-1766965978704-z306ogbmo",
+    "name": "Ralph Lavelle",
+    "email": "ralph@ralphlavelle.net",
+    "partySize": 1,
+    "preferredDate": "2026-01-10",
+    "createdAt": "2025-12-28T23:52:58.704Z"
+  },
+  {
+    "id": "booking-1766966073116-2l1lbaf9c",
+    "name": "Ralph Lavelle",
+    "email": "ralph@ralphlavelle.net",
+    "partySize": 1,
+    "preferredDate": "2026-01-24",
+    "createdAt": "2025-12-28T23:54:33.116Z"
+  },
+  {
+    "id": "booking-1766968589458-4wu2ucwiy",
+    "name": "Ralph Lavelle",
+    "email": "ralph@ralphlavelle.net",
+    "partySize": 1,
+    "preferredDate": "2026-01-04",
+    "createdAt": "2025-12-29T00:36:29.461Z"
+  }
+]

@@ -82,19 +82,9 @@
     }
   }
 
-  // Content Grid Layout
-  .place-content-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-    margin-bottom: 3rem;
-
-    @media (max-width: 968px) {
-      grid-template-columns: 1fr;
-    }
-  }
-
+  // Main Content Section
   .place-main {
+    margin-bottom: 3rem;
     .place-image-container {
       margin-bottom: 2rem;
       border-radius: 8px;
@@ -124,6 +114,8 @@
   }
 
   .place-map-section {
+    margin-bottom: 3rem;
+
     h2 {
       font-size: 1.5rem;
       color: @color-text-primary;
@@ -134,23 +126,6 @@
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 1rem;
-    }
-
-    .map-actions {
-      margin-bottom: 1rem;
-    }
-
-    .coordinates {
-      padding: 1rem;
-      background: @color-bg-muted;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      color: @color-text-muted;
-
-      p {
-        margin: 0.25rem 0;
-      }
     }
   }
 

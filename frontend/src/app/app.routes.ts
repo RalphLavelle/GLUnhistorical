@@ -17,6 +17,11 @@ export const routes: Routes = [
     title: 'Place Details - Gold Coast Unhistorical Walking Tours'
   },
   {
+    path: 'book-tour',
+    loadComponent: () => import('./components/book-tour/book-tour').then(m => m.BookTour),
+    title: 'Book a Tour - Gold Coast Unhistorical Walking Tours'
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'

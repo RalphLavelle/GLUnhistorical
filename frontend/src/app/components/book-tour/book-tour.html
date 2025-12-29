@@ -1,0 +1,177 @@
+<div class="book-tour-container">
+  <!-- Main Content -->
+  <div class="book-tour-content">
+    <!-- Hero Panel - Shows either booking header or success message -->
+    <header class="page-header hero-panel" role="alert" [attr.aria-live]="showSuccess() ? 'polite' : null">
+      @if (showSuccess()) {
+        <!-- Success Message Content -->
+        <div class="hero-content">
+          <h1>Thank You!</h1>
+          <p class="page-description">
+            Your tour booking has been successfully submitted.
+          </p>
+          <p class="page-description">
+            We'll be in touch soon to confirm your reservation.
+          </p>
+          <div class="cta-buttons">
+            <button 
+              type="button" 
+              class="btn btn-secondary" 
+              (click)="goToPlaces()"
+              aria-label="View all places">
+              View All Places
+            </button>
+          </div>
+        </div>
+      } @else {
+        <!-- Normal Booking Header Content -->
+        <div class="hero-content">
+          <h1>Book a Tour</h1>
+          <p class="page-description">
+            Reserve your spot for our Gold Coast Unhistorical Walking Tour. 
+            Fill out the form below and we'll get back to you soon!
+          </p>
+        </div>
+      }
+    </header>
+
+    <!-- Booking Form -->
+    @if (!hideForm()) {
+      <form 
+        [formGroup]="bookingForm" 
+        (ngSubmit)="onSubmit()" 
+        class="booking-form"
+        novalidate>
+        
+        <!-- Name Field -->
+        <div class="form-group">
+          <label for="name" class="form-label">
+            Full Name <span class="required" aria-label="required">*</span>
+          </label>
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            class="form-control"
+            [class.error]="hasError('name', 'required') || hasError('name', 'minlength')"
+            placeholder="Enter your full name"
+            aria-required="true"
+            aria-invalid="hasError('name', 'required') || hasError('name', 'minlength')"
+            [attr.aria-describedby]="hasError('name', 'required') || hasError('name', 'minlength') ? 'name-error' : null">
+          @if (hasError('name', 'required')) {
+            <span id="name-error" class="error-message" role="alert">
+              Name is required
+            </span>
+          }
+          @if (hasError('name', 'minlength')) {
+            <span id="name-error" class="error-message" role="alert">
+              Name must be at least 2 characters
+            </span>
+          }
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="email" class="form-label">
+            Email Address <span class="required" aria-label="required">*</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="form-control"
+            [class.error]="hasError('email', 'required') || hasError('email', 'email')"
+            placeholder="your.email@example.com"
+            aria-required="true"
+            aria-invalid="hasError('email', 'required') || hasError('email', 'email')"
+            [attr.aria-describedby]="hasError('email', 'required') || hasError('email', 'email') ? 'email-error' : null">
+          @if (hasError('email', 'required')) {
+            <span id="email-error" class="error-message" role="alert">
+              Email is required
+            </span>
+          }
+          @if (hasError('email', 'email')) {
+            <span id="email-error" class="error-message" role="alert">
+              Please enter a valid email address
+            </span>
+          }
+        </div>
+
+        <!-- Party Size Field -->
+        <div class="form-group">
+          <label for="partySize" class="form-label">
+            Number in Party <span class="required" aria-label="required">*</span>
+          </label>
+          <input
+            type="number"
+            id="partySize"
+            formControlName="partySize"
+            class="form-control"
+            [class.error]="hasError('partySize', 'required') || hasError('partySize', 'min') || hasError('partySize', 'max')"
+            min="1"
+            max="50"
+            placeholder="1"
+            aria-required="true"
+            aria-invalid="hasError('partySize', 'required') || hasError('partySize', 'min') || hasError('partySize', 'max')"
+            [attr.aria-describedby]="hasError('partySize', 'required') || hasError('partySize', 'min') || hasError('partySize', 'max') ? 'partySize-error' : null">
+          @if (hasError('partySize', 'required')) {
+            <span id="partySize-error" class="error-message" role="alert">
+              Party size is required
+            </span>
+          }
+          @if (hasError('partySize', 'min')) {
+            <span id="partySize-error" class="error-message" role="alert">
+              Party size must be at least 1
+            </span>
+          }
+          @if (hasError('partySize', 'max')) {
+            <span id="partySize-error" class="error-message" role="alert">
+              Party size cannot exceed 50
+            </span>
+          }
+        </div>
+
+        <!-- Preferred Date Field -->
+        <div class="form-group">
+          <label for="preferredDate" class="form-label">
+            Preferred Date <span class="required" aria-label="required">*</span>
+          </label>
+          <input
+            type="date"
+            id="preferredDate"
+            formControlName="preferredDate"
+            class="form-control"
+            [class.error]="hasError('preferredDate', 'required')"
+            [min]="minDate"
+            aria-required="true"
+            aria-invalid="hasError('preferredDate', 'required')"
+            [attr.aria-describedby]="hasError('preferredDate', 'required') ? 'preferredDate-error' : null">
+          @if (hasError('preferredDate', 'required')) {
+            <span id="preferredDate-error" class="error-message" role="alert">
+              Preferred date is required
+            </span>
+          }
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-actions">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="isSubmitting() || bookingForm.invalid"
+            [attr.aria-busy]="isSubmitting()">
+            @if (isSubmitting()) {
+              Submitting...
+            } @else {
+              Submit Booking
+            }
+          </button>
+          <a routerLink="/places" class="btn btn-secondary">
+            Cancel
+          </a>
+        </div>
+      </form>
+    }
+  </div>
+</div>
+

@@ -19,14 +19,6 @@
     <article class="place-detail">
       <!-- Header Section -->
       <header class="place-header">
-        <nav class="breadcrumb">
-          <a routerLink="/">Home</a>
-          <span>/</span>
-          <a routerLink="/places">Places</a>
-          <span>/</span>
-          <span>{{ currentPlace.name }}</span>
-        </nav>
-        
         <h1>{{ currentPlace.name }}</h1>
         <div class="place-meta">
           <span class="category-badge">{{ currentPlace.category | titlecase }}</span>
@@ -35,49 +27,42 @@
       </header>
 
       <!-- Main Content -->
-      <div class="place-content-grid">
-        <!-- Image and Description Section -->
-        <div class="place-main">
-          <div class="place-image-container">
-            <app-responsive-image 
-              [placeId]="currentPlace.id" 
-              [altText]="currentPlace.name"
-              [cssClass]="'place-image'">
-            </app-responsive-image>
-          </div>
-          
-          <div class="place-description">
-            <h2>About This Place</h2>
-            <p>{{ currentPlace.description }}</p>
-          </div>
+      <!-- Image Section -->
+      <div class="place-main">
+        <div class="place-image-container">
+          <app-responsive-image 
+            [placeId]="currentPlace.id" 
+            [altText]="currentPlace.name"
+            [cssClass]="'place-image'">
+          </app-responsive-image>
         </div>
+        
+        <div class="place-description">
+          <h2>About This Place</h2>
+          <p>{{ currentPlace.description }}</p>
+        </div>
+      </div>
 
-        <!-- Map Section -->
-        <aside class="place-map-section">
-          <h2>Location</h2>
-          <div class="map-container">
-            <google-map
-              [options]="mapOptions"
-              [center]="mapCenter()"
-              [width]="'100%'"
-              [height]="'400px'">
-              @if (marker(); as markerOptions) {
-                <map-marker [options]="markerOptions"></map-marker>
-              }
-            </google-map>
-          </div>
-          
-          <div class="coordinates">
-            <p><strong>Coordinates:</strong></p>
-            <p>{{ currentPlace.latitude }}, {{ currentPlace.longitude }}</p>
-          </div>
-        </aside>
+      <!-- Map Section -->
+      <div class="place-map-section">
+        <h2>Location</h2>
+        <div class="map-container">
+          <google-map
+            [options]="mapOptions"
+            [center]="mapCenter()"
+            [width]="'100%'"
+            [height]="'400px'">
+            @if (marker(); as markerOptions) {
+              <map-marker [options]="markerOptions"></map-marker>
+            }
+          </google-map>
+        </div>
       </div>
 
       <!-- Navigation -->
       <nav class="place-navigation">
         <a routerLink="/places" class="btn btn-secondary">← Back to All Places</a>
-        <a routerLink="/" class="btn btn-primary">Home</a>
+        <a routerLink="/book-tour" class="btn btn-primary">Book a Tour</a>
       </nav>
     </article>
   }

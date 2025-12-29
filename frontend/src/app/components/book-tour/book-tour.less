@@ -1,0 +1,252 @@
+// Book Tour component styles
+@import '../../../styles/_variables';
+
+.book-tour-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+// Breadcrumb Navigation
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: @color-text-muted;
+
+  a {
+    color: @color-primary;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: @color-primary-dark;
+      text-decoration: underline;
+    }
+  }
+
+  span {
+    color: @color-text-subtle;
+  }
+}
+
+// Hero Panel (matches home page hero styling)
+.page-header.hero-panel {
+  background: linear-gradient(135deg, @color-primary 0%, @color-accent 100%);
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 8px;
+  margin: 2rem 0 3rem 0;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in;
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .page-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+    color: white;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:last-of-type {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Booking Form
+.booking-form {
+  background: @color-bg-surface;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    .form-label {
+      display: block;
+      font-weight: 600;
+      color: @color-text-primary;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+
+      .required {
+        color: @color-error;
+        margin-left: 2px;
+      }
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid @color-border-subtle;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      background: white;
+      color: @color-text-primary;
+
+      &:focus {
+        outline: none;
+        border-color: @color-primary;
+        box-shadow: 0 0 0 3px fade(@color-primary, 10%);
+      }
+
+      &.error {
+        border-color: @color-error;
+      }
+
+      // Date input styling
+      &[type="date"] {
+        cursor: pointer;
+
+        &::-webkit-calendar-picker-indicator {
+          cursor: pointer;
+          opacity: 0.7;
+          transition: opacity 0.3s ease;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+
+      // Number input styling
+      &[type="number"] {
+        -moz-appearance: textfield;
+        appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          appearance: none;
+          margin: 0;
+        }
+      }
+    }
+
+    .error-message {
+      display: block;
+      color: @color-error;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+}
+
+// Button Styles
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+
+  &.btn-primary {
+    background: @color-primary;
+    color: white;
+    border-color: @color-primary;
+
+    &:hover:not(:disabled) {
+      background: @color-primary-dark;
+      border-color: @color-primary-dark;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  &.btn-secondary {
+    background: transparent;
+    color: white;
+    border-color: white;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .book-tour-container {
+    padding: 1rem;
+  }
+
+  .page-header.hero-panel {
+    padding: 2rem 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .page-description {
+      font-size: 1rem;
+    }
+  }
+
+  .booking-form {
+    padding: 1.5rem;
+
+    .form-actions {
+      flex-direction: column;
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
