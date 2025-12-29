@@ -16,14 +16,13 @@ services:
     # Explicitly specify Node.js buildpack
     environment_slug: node-js
     # Build command: install dependencies and build both frontend and backend
-    # Using npx ensures ng command is found from node_modules/.bin
-    # Set -e to exit on error, -x to show commands being executed
+    # Using npm run build ensures ng command is found via npm scripts (which add node_modules/.bin to PATH)
     build_command: |
       set -e
       echo "Installing frontend dependencies..."
       cd frontend && npm install --legacy-peer-deps
-      echo "Building frontend..."
-      npx ng build --configuration production
+      echo "Building frontend (production)..."
+      npm run build -- --configuration production
       echo "Installing backend dependencies..."
       cd ../backend && npm install
       echo "Building backend..."
