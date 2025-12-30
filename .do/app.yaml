@@ -26,7 +26,7 @@ services:
       echo "Installing backend dependencies..."
       cd ../backend && npm install
       echo "Building backend..."
-      npm run build
+      npx tsc
     # Run command: start the Express server (which serves both API and Angular static files)
     run_command: cd backend && npm start
     instance_count: 1
