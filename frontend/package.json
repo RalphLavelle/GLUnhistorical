@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "tsc": "tsc"
   },
   "prettier": {
     "printWidth": 100,
@@ -37,9 +38,10 @@
     "tslib": "^2.3.0",
     "jsdom": "^27.1.0",
     "less": "^4.2.0",
+    "typescript": "~5.9.2",
     "vitest": "^4.0.8"
   },
   "devDependencies": {
-    "typescript": "~5.9.2"
+    
   }
 }
