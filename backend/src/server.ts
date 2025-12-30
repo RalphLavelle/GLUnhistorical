@@ -95,6 +95,16 @@ if (process.env.NODE_ENV === 'production') {
     if (req.path.startsWith('/api/')) {
       return res.status(404).json({ error: 'API endpoint not found' });
     }
+    
+    // Don't serve index.html for file requests (images, assets, etc.)
+    // Check if path has a file extension or is a known static asset path
+    const hasFileExtension = /\.[a-zA-Z0-9]+$/.test(req.path);
+    if (hasFileExtension || req.path.startsWith('/photos/')) {
+      // Let express.static handle it, or return 404 if file doesn't exist
+      return res.status(404).json({ error: 'File not found' });
+    }
+    
+    // Serve index.html for Angular routes
     res.sendFile(path.join(frontendPath, 'index.html'));
   });
 }
