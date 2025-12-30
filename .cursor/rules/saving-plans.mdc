@@ -3,4 +3,4 @@ alwaysApply: true
 ---
 
 # Save plans in the project itself, not outside of it
-Always save plans into the /docs/plans folder. Create this folder if it doesn't already exist.
+When in plan mode, always save plans into the project's /docs/plans folder. Create this folder if it doesn't already exist.

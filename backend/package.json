@@ -1,5 +1,5 @@
 {
-  "name": "gcobscura-backend",
+  "name": "gcunhistorical-backend",
   "version": "1.0.0",
   "description": "Backend API for Gold Coast Unhistorical Walking Tours",
   "main": "dist/server.js",

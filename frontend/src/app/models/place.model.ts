@@ -9,19 +9,18 @@ export interface Place {
   address: string;
 }
 
-export interface PlacesResponse {
-  places: Place[];
-  metadata: {
-    version: string;
-    lastUpdated: string;
-    totalPlaces: number;
-    tourDuration: string;
-    tourDistance: string;
-    region: string;
-    coordinates: {
-      centerLat: number;
-      centerLng: number;
-    };
+/**
+ * Metadata about the tour, loaded from frontend assets
+ */
+export interface PlacesMetadata {
+  version: string;
+  lastUpdated: string;
+  tourDuration: string;
+  tourDistance: string;
+  region: string;
+  coordinates: {
+    centerLat: number;
+    centerLng: number;
   };
 }
 

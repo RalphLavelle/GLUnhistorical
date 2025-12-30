@@ -36,7 +36,7 @@
       Each location has its own story to tell about the Gold Coast's unique history.
     </p>
     <div class="map-container">
-      @if (placesData(); as data) {
+      @if (places().length > 0) {
         <google-map
           [options]="mapOptions"
           [center]="mapCenter()"

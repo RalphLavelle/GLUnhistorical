@@ -17,25 +17,11 @@ export interface Place {
   address: string;
 }
 
-export interface PlacesMetadata {
-  version: string;
-  lastUpdated: string;
-  totalPlaces: number;
-  tourDuration: string;
-  tourDistance: string;
-  region: string;
-  coordinates: {
-    centerLat: number;
-    centerLng: number;
-  };
-}
-
 export interface PlacesResponse {
   places: Place[];
-  metadata: PlacesMetadata;
 }
 
-export interface TouristBooking {
+export interface Booking {
   id: string;
   name: string;
   email: string;
@@ -44,12 +30,9 @@ export interface TouristBooking {
   createdAt: string;
 }
 
-export interface CreateTouristBookingInput {
+export interface CreateBookingInput {
   name: string;
   email: string;
   partySize: number | string;
   preferredDate: string;
 }
-
-
-

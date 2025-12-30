@@ -3,8 +3,8 @@ import cors from 'cors';
 import * as path from 'path';
 import { Db } from 'mongodb';
 import { connectToMongo } from './db/mongo';
-import { getPlaceById, getPlacesResponse } from './repositories/places.repo';
-import { createBooking, validateCreateBookingInput } from './repositories/tourists.repo';
+import { getPlaceById, getPlaces } from './repositories/places.repo';
+import { createBooking, validateCreateBookingInput } from './repositories/bookings.repo';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,13 +16,15 @@ app.use(express.json());
 let db: Db;
 
 // API endpoint to get all places
-app.get('/api/places', (req: Request, res: Response) => {
-  getPlacesResponse(db)
-    .then((data) => res.json(data))
-    .catch((error: unknown) => {
-      console.error('Error loading places:', error);
-      res.status(500).json({ error: 'Failed to load places data' });
-    });
+app.get('/api/places', async (req: Request, res: Response) => {
+  try {
+    // Fetch places from MongoDB
+    const places = await getPlaces(db);
+    res.json(places);
+  } catch (error: unknown) {
+    console.error('Error loading places:', error);
+    res.status(500).json({ error: 'Failed to load places data' });
+  }
 });
 
 // API endpoint to get a single place by ID

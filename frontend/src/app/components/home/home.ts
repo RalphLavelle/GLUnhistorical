@@ -2,8 +2,10 @@ import { Component, inject, OnInit, signal, ChangeDetectionStrategy } from '@ang
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { forkJoin } from 'rxjs';
 import { PlacesService } from '../../services/places';
-import { Place, PlacesResponse } from '../../models/place.model';
+import { MetadataService } from '../../services/metadata';
+import { Place } from '../../models/place.model';
 import { ResponsiveImageComponent } from '../responsive-image/responsive-image';
 
 @Component({
@@ -14,13 +16,11 @@ import { ResponsiveImageComponent } from '../responsive-image/responsive-image';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Home implements OnInit {
-  // Inject the PlacesService using inject() function
+  // Inject services using inject() function
   private placesService = inject(PlacesService);
+  private metadataService = inject(MetadataService);
   
-  // Signal to hold all places data
-  placesData = signal<PlacesResponse | null>(null);
-  
-  // Signal to hold individual places array
+  // Signal to hold places array
   places = signal<Place[]>([]);
   
   // Center coordinates for the map (from metadata)
@@ -41,42 +41,45 @@ export class Home implements OnInit {
   markers = signal<google.maps.MarkerOptions[]>([]);
 
   ngOnInit(): void {
-    // Load places data when component initializes
-    this.loadPlaces();
+    // Load places and metadata data when component initializes
+    this.loadPlacesAndMetadata();
   }
 
   /**
-   * Load all places from the API and prepare map markers
+   * Load all places from the API and metadata from assets in parallel
    */
-  private loadPlaces(): void {
-    this.placesService.getPlaces().subscribe({
-      next: (data) => {
+  private loadPlacesAndMetadata(): void {
+    // Load places and metadata in parallel using forkJoin
+    forkJoin({
+      places: this.placesService.getPlaces(),
+      metadata: this.metadataService.getMetadata(),
+    }).subscribe({
+      next: ({ places, metadata }) => {
         // Update signals with the received data
-        this.placesData.set(data);
-        this.places.set(data.places);
+        this.places.set(places);
         
         // Update map center from metadata
         this.mapCenter.set({
-          lat: data.metadata.coordinates.centerLat,
-          lng: data.metadata.coordinates.centerLng
+          lat: metadata.coordinates.centerLat,
+          lng: metadata.coordinates.centerLng,
         });
         
         // Create markers for each place
-        const markerOptions: google.maps.MarkerOptions[] = data.places.map(place => ({
+        const markerOptions: google.maps.MarkerOptions[] = places.map(place => ({
           position: { lat: place.latitude, lng: place.longitude },
           title: place.name,
           label: {
             text: place.name,
             color: '#333',
-            fontSize: '12px'
-          }
+            fontSize: '12px',
+          },
         }));
         
         this.markers.set(markerOptions);
       },
       error: (error) => {
-        console.error('Error loading places:', error);
-      }
+        console.error('Error loading places or metadata:', error);
+      },
     });
   }
 }

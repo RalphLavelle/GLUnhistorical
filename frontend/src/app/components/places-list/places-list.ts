@@ -87,8 +87,8 @@ export class PlacesList implements OnInit, OnDestroy {
     this.error.set(null);
     
     this.placesService.getPlaces().subscribe({
-      next: (data) => {
-        this.places.set(data.places);
+      next: (places) => {
+        this.places.set(places);
         this.loading.set(false);
       },
       error: (err) => {

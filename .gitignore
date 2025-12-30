@@ -36,13 +36,5 @@ logs/
 *.js.map
 
 frontend/public/photos/*
-backend/env.example
 backend/env.local
-backend/env.production
-backend/env.development
-backend/env.test
-backend/env.staging
-backend/env.production
-backend/env.development
-backend/env.test
-backend/env.staging
+backend/env.prod

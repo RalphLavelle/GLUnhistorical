@@ -26,3 +26,4 @@ echo "Frontend output: frontend/dist/frontend/browser"
 echo "Backend output: backend/dist"
 
 
+

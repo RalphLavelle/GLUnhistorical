@@ -1,15 +1,15 @@
 import { Collection, Db } from 'mongodb';
-import { CreateTouristBookingInput, TouristBooking } from '../types/api';
+import { CreateBookingInput, Booking } from '../types/api';
 
-const TOURISTS_COLLECTION = 'touristBookings';
+const BOOKINGS_COLLECTION = 'bookings';
 
-function getTouristsCollection(db: Db): Collection<TouristBooking> {
-  return db.collection<TouristBooking>(TOURISTS_COLLECTION);
+function getBookingsCollection(db: Db): Collection<Booking> {
+  return db.collection<Booking>(BOOKINGS_COLLECTION);
 }
 
 export async function ensureTouristsIndexes(db: Db): Promise<void> {
-  await getTouristsCollection(db).createIndex({ id: 1 }, { unique: true });
-  await getTouristsCollection(db).createIndex({ createdAt: 1 });
+  await getBookingsCollection(db).createIndex({ id: 1 }, { unique: true });
+  await getBookingsCollection(db).createIndex({ createdAt: 1 });
 }
 
 function isNonEmptyString(value: unknown): value is string {
@@ -33,7 +33,7 @@ function generateBookingId(): string {
 
 export function validateCreateBookingInput(input: unknown): {
   ok: true;
-  value: CreateTouristBookingInput;
+  value: CreateBookingInput;
 } | {
   ok: false;
   error: string;
@@ -71,8 +71,8 @@ export function validateCreateBookingInput(input: unknown): {
   };
 }
 
-export async function createBooking(db: Db, input: CreateTouristBookingInput): Promise<TouristBooking> {
-  const booking: TouristBooking = {
+export async function createBooking(db: Db, input: CreateBookingInput): Promise<Booking> {
+  const booking: Booking = {
     id: generateBookingId(),
     name: input.name,
     email: input.email,
@@ -86,15 +86,15 @@ export async function createBooking(db: Db, input: CreateTouristBookingInput): P
     throw new Error('Invalid partySize after validation.');
   }
 
-  await getTouristsCollection(db).insertOne(booking);
+  await getBookingsCollection(db).insertOne(booking);
   return booking;
 }
 
 export async function upsertTouristBookings(
   db: Db,
-  bookings: TouristBooking[]
+  bookings: Booking[]
 ): Promise<{ bookingsUpserted: number }> {
-  const col = getTouristsCollection(db);
+  const col = getBookingsCollection(db);
   let upserted = 0;
 
   for (const booking of bookings) {
@@ -104,6 +104,3 @@ export async function upsertTouristBookings(
 
   return { bookingsUpserted: upserted };
 }
-
-
-

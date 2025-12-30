@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Place, PlacesResponse } from '../models/place.model';
+import { Place } from '../models/place.model';
 
 @Injectable({
   providedIn: 'root',
@@ -15,10 +15,10 @@ export class PlacesService {
 
   /**
    * Fetch all places from the API
-   * Returns an Observable that emits the full places response including metadata
+   * Returns an Observable that emits an array of places
    */
-  getPlaces(): Observable<PlacesResponse> {
-    return this.http.get<PlacesResponse>(`${this.apiUrl}/places`);
+  getPlaces(): Observable<Place[]> {
+    return this.http.get<Place[]>(`${this.apiUrl}/places`);
   }
 
   /**
