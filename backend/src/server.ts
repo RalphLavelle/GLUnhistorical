@@ -41,14 +41,14 @@ app.get('/api/places/:id', (req: Request, res: Response) => {
 });
 
 // API endpoint to submit a tour booking
-app.post('/api/tourists', (req: Request, res: Response) => {
+app.post('/api/bookings', (req: Request, res: Response) => {
   const validation = validateCreateBookingInput(req.body);
   if (!validation.ok) return res.status(400).json({ error: validation.error });
 
   createBooking(db, validation.value)
     .then((booking) => res.status(201).json(booking))
     .catch((error: unknown) => {
-      console.error('Error saving tourist booking:', error);
+      console.error('Error saving booking:', error);
       res.status(500).json({ error: 'Failed to save booking' });
     });
 });
@@ -73,7 +73,7 @@ if (process.env.NODE_ENV !== 'production') {
       apiEndpoints: [
         'GET /api/places - Get all places',
         'GET /api/places/:id - Get a single place',
-        'POST /api/tourists - Submit a booking',
+        'POST /api/bookings - Submit a booking',
         'GET /api/health - Health check'
       ],
       frontend: 'Angular dev server runs on http://localhost:4200',
@@ -97,10 +97,11 @@ if (process.env.NODE_ENV === 'production') {
     }
     
     // Don't serve index.html for file requests (images, assets, etc.)
-    // Check if path has a file extension or is a known static asset path
+    // If express.static() couldn't find the file and it has an extension, return 404
+    // This prevents serving index.html for missing static assets
     const hasFileExtension = /\.[a-zA-Z0-9]+$/.test(req.path);
-    if (hasFileExtension || req.path.startsWith('/photos/')) {
-      // Let express.static handle it, or return 404 if file doesn't exist
+    if (hasFileExtension) {
+      // express.static() already tried to serve this file and couldn't find it
       return res.status(404).json({ error: 'File not found' });
     }
     
