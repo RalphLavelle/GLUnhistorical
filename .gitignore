@@ -35,6 +35,6 @@ logs/
 # TypeScript
 *.js.map
 
-frontend/public/photos/*
+# frontend/public/photos/*
 backend/env.local
 backend/env.prod
