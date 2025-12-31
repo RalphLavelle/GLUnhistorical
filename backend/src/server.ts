@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import * as path from 'path';
+import * as fs from 'fs';
 import { Db } from 'mongodb';
 import { connectToMongo } from './db/mongo';
 import { getPlaceById, getPlaces } from './repositories/places.repo';
@@ -64,6 +65,38 @@ app.get('/api/health', async (req: Request, res: Response) => {
   }
 });
 
+// Debug endpoint to check file paths (helps diagnose static file serving issues)
+app.get('/api/debug/paths', (req: Request, res: Response) => {
+  const frontendPath = path.join(__dirname, '..', '..', 'frontend', 'dist', 'frontend', 'browser');
+  const photosPath = path.join(frontendPath, 'photos');
+  
+  // Check if directories exist
+  const frontendExists = fs.existsSync(frontendPath);
+  const photosExists = fs.existsSync(photosPath);
+  
+  // List contents of photos directory if it exists
+  let photosContents: string[] = [];
+  if (photosExists) {
+    try {
+      photosContents = fs.readdirSync(photosPath);
+    } catch (err) {
+      photosContents = [`Error reading directory: ${err}`];
+    }
+  }
+  
+  res.json({
+    __dirname,
+    cwd: process.cwd(),
+    NODE_ENV: process.env.NODE_ENV,
+    frontendPath,
+    frontendExists,
+    photosPath,
+    photosExists,
+    photosContents: photosContents.slice(0, 10), // First 10 items only
+    frontendContents: frontendExists ? fs.readdirSync(frontendPath).slice(0, 10) : []
+  });
+});
+
 // Development mode: helpful message for root route
 if (process.env.NODE_ENV !== 'production') {
   app.get('/', (req: Request, res: Response) => {
@@ -86,6 +119,12 @@ if (process.env.NODE_ENV !== 'production') {
 // This allows Express to serve the built Angular app as static files
 if (process.env.NODE_ENV === 'production') {
   const frontendPath = path.join(__dirname, '..', '..', 'frontend', 'dist', 'frontend', 'browser');
+  
+  // Log the resolved path for debugging
+  console.log('Static files path:', frontendPath);
+  console.log('Static files path exists:', fs.existsSync(frontendPath));
+  console.log('Photos path exists:', fs.existsSync(path.join(frontendPath, 'photos')));
+  
   app.use(express.static(frontendPath));
 
   // Handle Angular routes (SPA fallback - must be last route)
@@ -114,7 +153,7 @@ async function start(): Promise<void> {
   db = await connectToMongo();
 
   app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on http://localhost:${PORT} in ${process.env.NODE_ENV} mode.`);
   });
 }
 

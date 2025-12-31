@@ -96,7 +96,7 @@ The Angular dev server is configured with a proxy to forward API requests to the
 ## Project Structure
 
 ```
-GCObscura/
+GCUnhistorical/
 ├── backend/                 # Node.js/Express backend
 │   ├── src/
 │   │   └── server.ts       # Express server and API routes
@@ -139,30 +139,9 @@ GCObscura/
 
 ## Deployment
 
-### DigitalOcean App Platform
+### Digital Ocean App Platform
 
 This application is configured for deployment on DigitalOcean App Platform. The Express backend serves both the API and the Angular frontend static files in production.
-
-**Prerequisites:**
-- DigitalOcean account
-- MongoDB Atlas account (free M0 cluster)
-- GitHub repository
-
-**Quick Deploy:**
-
-1. Push your code to GitHub
-2. Go to [DigitalOcean App Platform](https://cloud.digitalocean.com/apps)
-3. Click **Create App** and connect your GitHub repository
-4. Configure:
-   - **Build Command**: `cd frontend && npm install && npm run build && cd ../backend && npm install && npm run build`
-     - *Note: Uses `&&` (bash syntax) because DigitalOcean runs on Linux. For local PowerShell testing, use `.\scripts\build-production.ps1`*
-   - **Run Command**: `cd backend && npm start`
-   - **HTTP Port**: `3000`
-5. Set environment variables:
-   - `NODE_ENV` = `production`
-   - `MONGODB_URI` = Your MongoDB Atlas connection string
-   - `MONGODB_DB_NAME` = `gcobscura`
-6. Deploy and seed database: `cd backend && npm run seed`
 
 **Local Testing (PowerShell):**
 ```powershell
@@ -182,24 +161,14 @@ Places data has the following structure:
 
 ```json
 {
-  "places": [
-    {
-      "id": "unique-id",
-      "name": "Place Name",
-      "description": "Description text...",
-      "photo": "URL to photo",
-      "latitude": -28.00200,
-      "longitude": 153.42900,
-      "category": "landmark",
-      "address": "Street address"
-    }
-  ],
-  "metadata": {
-    "version": "1.0",
-    "totalPlaces": 25,
-    "tourDuration": "60-90 minutes",
-    "tourDistance": "3-4 kilometres"
-  }
+  "id": "unique-id",
+  "name": "Place Name",
+  "description": "Description text...",
+  "photo": "URL to photo",
+  "latitude": -28.00200,
+  "longitude": 153.42900,
+  "category": "landmark",
+  "address": "Street address"
 }
 ```
 
@@ -218,4 +187,3 @@ For production deployment, you may want to:
 - No authentication is required for the API endpoints
 - Google Maps requires a valid API key to function
 - The application uses lazy loading for routes to optimize performance
-
