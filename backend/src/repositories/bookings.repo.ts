@@ -81,11 +81,6 @@ export async function createBooking(db: Db, input: CreateBookingInput): Promise<
     createdAt: new Date().toISOString(),
   };
 
-  // partySize has already been validated; this is defensive.
-  if (!booking.partySize || booking.partySize <= 0) {
-    throw new Error('Invalid partySize after validation.');
-  }
-
   await getBookingsCollection(db).insertOne(booking);
   return booking;
 }

@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Tourist } from '../models/tourist.model';
+import { Booking } from '../models/booking.model';
 
 @Injectable({
   providedIn: 'root',
@@ -18,8 +18,8 @@ export class TouristService {
    * @param tourist - The tourist booking data to submit
    * Returns an Observable that emits the saved booking with server-generated ID
    */
-  submitBooking(tourist: Tourist): Observable<Tourist> {
-    return this.http.post<Tourist>(`${this.apiUrl}/tourists`, tourist);
+  submitBooking(booking: Booking): Observable<Booking> {
+    return this.http.post<Booking>(`${this.apiUrl}/bookings`, booking);
   }
 }
 

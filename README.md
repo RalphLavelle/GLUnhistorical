@@ -80,7 +80,7 @@ The backend server will run on `http://localhost:3000`
 **API Endpoints:**
 - `GET /api/places` - Get all places
 - `GET /api/places/:id` - Get a single place by ID
-- `GET /api/health` - Health check
+- `POST /api/bookings` - Book a tour
 
 ### 4. Start the Frontend Development Server
 
@@ -100,9 +100,6 @@ GCUnhistorical/
 ├── backend/                 # Node.js/Express backend
 │   ├── src/
 │   │   └── server.ts       # Express server and API routes
-│   ├── data/               # Data files (places.json, tourists.json)
-│   │   ├── places.json    # Places data (served by backend)
-│   │   └── tourists.json  # Tour bookings data
 │   ├── package.json
 │   └── tsconfig.json
 ├── frontend/                # Angular frontend

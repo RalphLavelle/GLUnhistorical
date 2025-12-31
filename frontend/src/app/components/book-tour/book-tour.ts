@@ -2,8 +2,8 @@ import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/cor
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { TouristService } from '../../services/tourist';
-import { Tourist } from '../../models/tourist.model';
+import { TouristService } from '../../services/bookings';
+import { Booking } from '../../models/booking.model';
 
 @Component({
   selector: 'app-book-tour',
@@ -66,7 +66,7 @@ export class BookTour {
     this.isSubmitting.set(true);
 
     // Prepare booking data
-    const bookingData: Tourist = {
+    const bookingData: Booking = {
       name: this.bookingForm.value.name,
       email: this.bookingForm.value.email,
       partySize: this.bookingForm.value.partySize,

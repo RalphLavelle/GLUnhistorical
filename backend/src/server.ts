@@ -1,7 +1,6 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import * as path from 'path';
-import * as fs from 'fs';
 import { Db } from 'mongodb';
 import { connectToMongo } from './db/mongo';
 import { getPlaceById, getPlaces } from './repositories/places.repo';
@@ -54,49 +53,6 @@ app.post('/api/bookings', (req: Request, res: Response) => {
     });
 });
 
-// Health check endpoint
-app.get('/api/health', async (req: Request, res: Response) => {
-  try {
-    await db.command({ ping: 1 });
-    res.json({ status: 'ok', timestamp: new Date().toISOString() });
-  } catch (error: unknown) {
-    console.error('Health check failed:', error);
-    res.status(500).json({ status: 'error' });
-  }
-});
-
-// Debug endpoint to check file paths (helps diagnose static file serving issues)
-app.get('/api/debug/paths', (req: Request, res: Response) => {
-  const frontendPath = path.join(__dirname, '..', '..', 'frontend', 'dist', 'frontend', 'browser');
-  const photosPath = path.join(frontendPath, 'photos');
-  
-  // Check if directories exist
-  const frontendExists = fs.existsSync(frontendPath);
-  const photosExists = fs.existsSync(photosPath);
-  
-  // List contents of photos directory if it exists
-  let photosContents: string[] = [];
-  if (photosExists) {
-    try {
-      photosContents = fs.readdirSync(photosPath);
-    } catch (err) {
-      photosContents = [`Error reading directory: ${err}`];
-    }
-  }
-  
-  res.json({
-    __dirname,
-    cwd: process.cwd(),
-    NODE_ENV: process.env.NODE_ENV,
-    frontendPath,
-    frontendExists,
-    photosPath,
-    photosExists,
-    photosContents: photosContents.slice(0, 10), // First 10 items only
-    frontendContents: frontendExists ? fs.readdirSync(frontendPath).slice(0, 10) : []
-  });
-});
-
 // Development mode: helpful message for root route
 if (process.env.NODE_ENV !== 'production') {
   app.get('/', (req: Request, res: Response) => {
@@ -106,8 +62,7 @@ if (process.env.NODE_ENV !== 'production') {
       apiEndpoints: [
         'GET /api/places - Get all places',
         'GET /api/places/:id - Get a single place',
-        'POST /api/bookings - Submit a booking',
-        'GET /api/health - Health check'
+        'POST /api/bookings - Submit a booking'
       ],
       frontend: 'Angular dev server runs on http://localhost:4200',
       note: 'In production, this server also serves the Angular frontend'
@@ -119,11 +74,6 @@ if (process.env.NODE_ENV !== 'production') {
 // This allows Express to serve the built Angular app as static files
 if (process.env.NODE_ENV === 'production') {
   const frontendPath = path.join(__dirname, '..', '..', 'frontend', 'dist', 'frontend', 'browser');
-  
-  // Log the resolved path for debugging
-  console.log('Static files path:', frontendPath);
-  console.log('Static files path exists:', fs.existsSync(frontendPath));
-  console.log('Photos path exists:', fs.existsSync(path.join(frontendPath, 'photos')));
   
   app.use(express.static(frontendPath));
 
@@ -161,4 +111,3 @@ start().catch((error: unknown) => {
   console.error('Failed to start server:', error);
   process.exitCode = 1;
 });
-

@@ -1,8 +1,8 @@
 /**
- * Tourist booking model
- * Represents a tour booking submission
+ * Booking model
+ * Represents a booking submission
  */
-export interface Tourist {
+export interface Booking {
   /** Unique identifier for the booking */
   id?: string;
   /** Full name of the person booking the tour */
