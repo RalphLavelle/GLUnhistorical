@@ -101,9 +101,13 @@ export class PlacesList implements OnInit, OnDestroy {
 
   /**
    * Get unique categories from places
+   * Flattens all categories arrays and returns unique values
    */
   getCategories(): string[] {
-    const categories = new Set(this.places().map(p => p.category));
+    const categories = new Set<string>();
+    this.places().forEach(place => {
+      place.categories.forEach(cat => categories.add(cat));
+    });
     return Array.from(categories).sort();
   }
 
@@ -115,9 +119,9 @@ export class PlacesList implements OnInit, OnDestroy {
     const term = this.searchTerm().toLowerCase();
     const category = this.selectedCategory();
 
-    // Filter by category
+    // Filter by category - check if place's categories array includes the selected category
     if (category !== 'all') {
-      filtered = filtered.filter(p => p.category === category);
+      filtered = filtered.filter(p => p.categories.includes(category));
     }
 
     // Filter by search term

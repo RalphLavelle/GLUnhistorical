@@ -21,7 +21,7 @@
       <header class="place-header">
         <h1>{{ currentPlace.name }}</h1>
         <div class="place-meta">
-          <span class="category-badge">{{ currentPlace.category | titlecase }}</span>
+          <span class="category-badge">{{ currentPlace.categories.join(', ') | titlecase }}</span>
           <span class="address">{{ currentPlace.address }}</span>
         </div>
       </header>

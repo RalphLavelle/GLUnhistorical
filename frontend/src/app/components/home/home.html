@@ -68,7 +68,7 @@
               </div>
               <div class="place-content">
                 <h3>{{ place.name }}</h3>
-                <p class="place-category">{{ place.category }}</p>
+                <p class="place-category">{{ place.categories.join(', ') }}</p>
                 <p class="place-description">{{ place.description.substring(0, 150) }}...</p>
               </div>
             </a>

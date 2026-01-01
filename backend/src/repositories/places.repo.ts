@@ -14,17 +14,18 @@ export async function ensurePlacesIndexes(db: Db): Promise<void> {
 }
 
 /**
- * Retrieves all places from the MongoDB places collection.
+ * Retrieves all active places from the MongoDB places collection.
+ * Only returns places where active is true.
  * 
  * @param db - MongoDB database instance
- * @returns Array of places sorted by name
+ * @returns Array of active places sorted by name
  */
 export async function getPlaces(db: Db): Promise<Place[]> {
-  return getPlacesCollection(db).find({}).sort({ name: 1 }).toArray();
+  return getPlacesCollection(db).find({ active: true }).sort({ name: 1 }).toArray();
 }
 
 export async function getPlaceById(db: Db, id: string): Promise<Place | null> {
-  return getPlacesCollection(db).findOne({ id });
+  return getPlacesCollection(db).findOne({ id, active: true });
 }
 
 /**

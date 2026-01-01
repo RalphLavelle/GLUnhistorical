@@ -13,8 +13,9 @@ export interface Place {
   description: string;
   latitude: number;
   longitude: number;
-  category: string;
+  categories: string[];  // Changed from category: string to support multiple categories
   address: string;
+  active: boolean;       // New field for soft-delete functionality
 }
 
 export interface PlacesResponse {

@@ -59,7 +59,7 @@
                   [placeId]="place.id" 
                   [altText]="place.name">
                 </app-responsive-image>
-                <span class="place-category-badge">{{ place.category }}</span>
+                <span class="place-category-badge">{{ place.categories.join(', ') }}</span>
               </div>
               <div class="place-content">
                 <h2>{{ place.name }}</h2>
