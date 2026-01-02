@@ -53,6 +53,14 @@ app.post('/api/bookings', (req: Request, res: Response) => {
     });
 });
 
+// Health check endpoint for monitoring and load balancers
+app.get('/api/health', (req: Request, res: Response) => {
+  res.json({
+    status: 'healthy',
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Development mode: helpful message for root route
 if (process.env.NODE_ENV !== 'production') {
   app.get('/', (req: Request, res: Response) => {
@@ -60,6 +68,7 @@ if (process.env.NODE_ENV !== 'production') {
       message: 'Express API Server',
       status: 'running',
       apiEndpoints: [
+        'GET /api/health - Health check',
         'GET /api/places - Get all places',
         'GET /api/places/:id - Get a single place',
         'POST /api/bookings - Submit a booking'
