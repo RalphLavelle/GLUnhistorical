@@ -1,9 +1,11 @@
 import { ApplicationConfig, APP_INITIALIZER } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
+import { provideCloudinaryLoader } from '@angular/common';
 
 import { routes } from './app.routes';
 import { GoogleMapsLoader } from './config/google-maps-loader';
+import { environment } from '../environments/environment';
 
 /**
  * Initialize Google Maps API before app starts
@@ -17,6 +19,9 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     // Provide HttpClient for API calls
     provideHttpClient(),
+    // Configure Cloudinary image loader for NgOptimizedImage
+    // Uses cloud name from environment to build image URLs
+    provideCloudinaryLoader(`https://res.cloudinary.com/${environment.cloudinary.cloudName}`),
     // Load Google Maps API dynamically using environment variable
     GoogleMapsLoader,
     {

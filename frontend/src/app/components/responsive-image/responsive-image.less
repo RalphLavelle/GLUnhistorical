@@ -1,5 +1,5 @@
 // Responsive Image Component Styles
-// Uses breakpoints from base styles.less
+// Uses NgOptimizedImage with Cloudinary for responsive image delivery
 @import '../../../styles/_variables';
 
 :host {
@@ -8,9 +8,10 @@
 }
 
 img {
-  // Ensure image is responsive and maintains aspect ratio
-  max-width: 100%;
-  height: auto;
+  // Make image responsive - fills container width
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
   
   // Smooth image loading
@@ -20,4 +21,3 @@ img {
   // Prevent layout shift during image load
   background-color: @color-bg-placeholder;
 }
-

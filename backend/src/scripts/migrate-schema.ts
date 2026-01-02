@@ -1,6 +1,6 @@
 /**
  * Migration script to update the places collection schema:
- * 1. Add 'active' boolean field (defaulted to true)
+ * 1. Add 'active' boolean field (defaulted to false)
  * 2. Convert 'category' string to 'categories' array
  * 
  * Run with: npx ts-node src/scripts/migrate-schema.ts
@@ -37,7 +37,7 @@ async function migrateSchema() {
 
     // Add 'active' field if missing, default to true
     if (place.active === undefined) {
-      update.active = true;
+      update.active = false;
       activeUpdated++;
     }
 

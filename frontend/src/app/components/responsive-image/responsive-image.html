@@ -1,9 +1,16 @@
+<!-- 
+  Responsive image using NgOptimizedImage with Cloudinary CDN
+  - ngSrc is the Cloudinary public_id (place ID from database)
+  - ngSrcset provides responsive image variants
+  - Cloudinary loader automatically adds width transformations
+  - width/height provide aspect ratio hint (CSS handles actual sizing)
+-->
 <img
-  [srcset]="srcset()"
-  [sizes]="sizes()"
-  [src]="mediumSrc()"
+  [ngSrc]="placeId()"
+  [ngSrcset]="responsiveWidths"
+  [sizes]="imageSizes"
   [alt]="altText()"
-  [class]="cssClass()"
+  width="1280"
+  height="720"
   loading="lazy"
   decoding="async">
-
